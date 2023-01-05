@@ -3,6 +3,7 @@ import 'package:coinspace/config/textstyle.dart';
 import 'package:coinspace/controller/home_controller.dart';
 import 'package:coinspace/view/assets/notification_view.dart';
 import 'package:coinspace/view/home/card.dart';
+import 'package:coinspace/view/market/bitcoin_screen.dart';
 import 'package:coinspace/view/profile/scan_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -258,204 +259,216 @@ class _AssetsViewState extends State<AssetsView> {
                                 for (var i = 0; i < 5; i++)
                                   Padding(
                                     padding: const EdgeInsets.only(bottom: 15),
-                                    child: Container(
-                                      height: 80,
-                                      width: Get.width,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(14),
-                                        color: AppTheme.isLightTheme == true
-                                            ? HexColor(
-                                                AppTheme.lightGrayString!)
-                                            : HexColor(
-                                                AppTheme.darkGrayString!),
-                                      ),
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(
-                                            left: 16, right: 16),
-                                        child: Row(
-                                          children: [
-                                            Expanded(
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Row(
-                                                    children: [
-                                                      SizedBox(
-                                                        height: 16,
-                                                        width: 16,
-                                                        child: Image.asset(
+                                    child: InkWell(
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const BitcoinScreen(),
+                                          ),
+                                        );
+                                      },
+                                      child: Container(
+                                        height: 80,
+                                        width: Get.width,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(14),
+                                          color: AppTheme.isLightTheme == true
+                                              ? HexColor(
+                                                  AppTheme.lightGrayString!)
+                                              : HexColor(
+                                                  AppTheme.darkGrayString!),
+                                        ),
+                                        child: Padding(
+                                          padding: const EdgeInsets.only(
+                                              left: 16, right: 16),
+                                          child: Row(
+                                            children: [
+                                              Expanded(
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Row(
+                                                      children: [
+                                                        SizedBox(
+                                                          height: 16,
+                                                          width: 16,
+                                                          child: Image.asset(
+                                                            i == 0
+                                                                ? DefaultImages
+                                                                    .h14
+                                                                : i == 1
+                                                                    ? DefaultImages
+                                                                        .h19
+                                                                    : i == 2
+                                                                        ? DefaultImages
+                                                                            .h26
+                                                                        : i == 3
+                                                                            ? DefaultImages.h18
+                                                                            : DefaultImages.h25,
+                                                          ),
+                                                        ),
+                                                        Text(
                                                           i == 0
-                                                              ? DefaultImages
-                                                                  .h14
+                                                              ? "  \$819,702"
                                                               : i == 1
-                                                                  ? DefaultImages
-                                                                      .h19
+                                                                  ? "  \$178,658"
                                                                   : i == 2
-                                                                      ? DefaultImages
-                                                                          .h26
-                                                                      : i == 3
-                                                                          ? DefaultImages
-                                                                              .h18
-                                                                          : DefaultImages
-                                                                              .h25,
+                                                                      ? "  \$93,267"
+                                                                      : "  \$7,768",
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .bodyText1!
+                                                                  .copyWith(
+                                                                    fontSize:
+                                                                        14,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w800,
+                                                                  ),
                                                         ),
-                                                      ),
-                                                      Text(
-                                                        i == 0
-                                                            ? "  \$819,702"
-                                                            : i == 1
-                                                                ? "  \$178,658"
-                                                                : i == 2
-                                                                    ? "  \$93,267"
-                                                                    : "  \$7,768",
-                                                        style: Theme.of(context)
-                                                            .textTheme
-                                                            .bodyText1!
-                                                            .copyWith(
-                                                              fontSize: 14,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w800,
-                                                            ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                  const SizedBox(height: 8),
-                                                  Text(
-                                                    i == 0
-                                                        ? "20.406595 BTC"
-                                                        : i == 1
-                                                            ? "65.106697 ETH"
-                                                            : i == 2
-                                                                ? "93,267.02 USDC"
-                                                                : "56212.58 DOGE",
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .bodyText1!
-                                                        .copyWith(
-                                                          fontSize: 12,
-                                                          fontWeight:
-                                                              FontWeight.w400,
-                                                          color: HexColor(AppTheme
-                                                              .greenColorString!),
-                                                        ),
-                                                  ),
-                                                ],
+                                                      ],
+                                                    ),
+                                                    const SizedBox(height: 8),
+                                                    Text(
+                                                      i == 0
+                                                          ? "20.406595 BTC"
+                                                          : i == 1
+                                                              ? "65.106697 ETH"
+                                                              : i == 2
+                                                                  ? "93,267.02 USDC"
+                                                                  : "56212.58 DOGE",
+                                                      style: Theme.of(context)
+                                                          .textTheme
+                                                          .bodyText1!
+                                                          .copyWith(
+                                                            fontSize: 12,
+                                                            fontWeight:
+                                                                FontWeight.w400,
+                                                            color: HexColor(AppTheme
+                                                                .greenColorString!),
+                                                          ),
+                                                    ),
+                                                  ],
+                                                ),
                                               ),
-                                            ),
-                                            const SizedBox(width: 14),
-                                            Expanded(
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.end,
-                                                children: [
-                                                  Text(
-                                                    i == 0
-                                                        ? "-84,265.36"
-                                                        : i == 1
-                                                            ? "+44,199.00"
-                                                            : i == 2
-                                                                ? "+44,199.00"
-                                                                : "+44,199.00",
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .bodyText1!
-                                                        .copyWith(
-                                                          fontSize: 14,
-                                                          fontWeight:
-                                                              FontWeight.w800,
-                                                          color: i == 0 ||
-                                                                  i == 1
-                                                              ? HexColor(AppTheme
-                                                                  .redColorString!)
-                                                              : HexColor(AppTheme
-                                                                  .greenColorString!),
-                                                        ),
-                                                  ),
-                                                  const SizedBox(height: 8),
-                                                  Text(
-                                                    i == 0
-                                                        ? "-10.28%"
-                                                        : i == 1
-                                                            ? "-8.15%"
-                                                            : i == 2
-                                                                ? "+0.03%"
-                                                                : "+1.85%",
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .bodyText1!
-                                                        .copyWith(
-                                                          fontSize: 12,
-                                                          fontWeight:
-                                                              FontWeight.w400,
-                                                          color: i == 0 ||
-                                                                  i == 1
-                                                              ? HexColor(AppTheme
-                                                                  .redColorString!)
-                                                              : HexColor(AppTheme
-                                                                  .greenColorString!),
-                                                        ),
-                                                  ),
-                                                ],
+                                              const SizedBox(width: 14),
+                                              Expanded(
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.end,
+                                                  children: [
+                                                    Text(
+                                                      i == 0
+                                                          ? "-84,265.36"
+                                                          : i == 1
+                                                              ? "+44,199.00"
+                                                              : i == 2
+                                                                  ? "+44,199.00"
+                                                                  : "+44,199.00",
+                                                      style: Theme.of(context)
+                                                          .textTheme
+                                                          .bodyText1!
+                                                          .copyWith(
+                                                            fontSize: 14,
+                                                            fontWeight:
+                                                                FontWeight.w800,
+                                                            color: i == 0 ||
+                                                                    i == 1
+                                                                ? HexColor(AppTheme
+                                                                    .redColorString!)
+                                                                : HexColor(AppTheme
+                                                                    .greenColorString!),
+                                                          ),
+                                                    ),
+                                                    const SizedBox(height: 8),
+                                                    Text(
+                                                      i == 0
+                                                          ? "-10.28%"
+                                                          : i == 1
+                                                              ? "-8.15%"
+                                                              : i == 2
+                                                                  ? "+0.03%"
+                                                                  : "+1.85%",
+                                                      style: Theme.of(context)
+                                                          .textTheme
+                                                          .bodyText1!
+                                                          .copyWith(
+                                                            fontSize: 12,
+                                                            fontWeight:
+                                                                FontWeight.w400,
+                                                            color: i == 0 ||
+                                                                    i == 1
+                                                                ? HexColor(AppTheme
+                                                                    .redColorString!)
+                                                                : HexColor(AppTheme
+                                                                    .greenColorString!),
+                                                          ),
+                                                    ),
+                                                  ],
+                                                ),
                                               ),
-                                            ),
-                                            const SizedBox(width: 14),
-                                            Expanded(
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.end,
-                                                children: [
-                                                  Text(
-                                                    i == 0
-                                                        ? "40,168.53"
-                                                        : i == 1
-                                                            ? "2744.37"
-                                                            : i == 2
-                                                                ? "1.00"
-                                                                : "0.1382",
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .bodyText1!
-                                                        .copyWith(
-                                                          fontSize: 14,
-                                                          fontWeight:
-                                                              FontWeight.w800,
-                                                        ),
-                                                  ),
-                                                  const SizedBox(height: 8),
-                                                  Text(
-                                                    i == 0
-                                                        ? "+2.16%"
-                                                        : i == 1
-                                                            ? "+1.15%"
-                                                            : i == 2
-                                                                ? "+0.00%"
-                                                                : "+0.23%",
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .bodyText1!
-                                                        .copyWith(
-                                                          fontSize: 12,
-                                                          fontWeight:
-                                                              FontWeight.w400,
-                                                          color: i == 2
-                                                              ? HexColor(AppTheme
-                                                                  .secondaryColorString!)
-                                                              : HexColor(AppTheme
-                                                                  .greenColorString!),
-                                                        ),
-                                                  ),
-                                                ],
+                                              const SizedBox(width: 14),
+                                              Expanded(
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.end,
+                                                  children: [
+                                                    Text(
+                                                      i == 0
+                                                          ? "40,168.53"
+                                                          : i == 1
+                                                              ? "2744.37"
+                                                              : i == 2
+                                                                  ? "1.00"
+                                                                  : "0.1382",
+                                                      style: Theme.of(context)
+                                                          .textTheme
+                                                          .bodyText1!
+                                                          .copyWith(
+                                                            fontSize: 14,
+                                                            fontWeight:
+                                                                FontWeight.w800,
+                                                          ),
+                                                    ),
+                                                    const SizedBox(height: 8),
+                                                    Text(
+                                                      i == 0
+                                                          ? "+2.16%"
+                                                          : i == 1
+                                                              ? "+1.15%"
+                                                              : i == 2
+                                                                  ? "+0.00%"
+                                                                  : "+0.23%",
+                                                      style: Theme.of(context)
+                                                          .textTheme
+                                                          .bodyText1!
+                                                          .copyWith(
+                                                            fontSize: 12,
+                                                            fontWeight:
+                                                                FontWeight.w400,
+                                                            color: i == 2
+                                                                ? HexColor(AppTheme
+                                                                    .secondaryColorString!)
+                                                                : HexColor(AppTheme
+                                                                    .greenColorString!),
+                                                          ),
+                                                    ),
+                                                  ],
+                                                ),
                                               ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ),

@@ -3,6 +3,7 @@ import 'package:coinspace/config/textstyle.dart';
 import 'package:coinspace/controller/home_controller.dart';
 import 'package:coinspace/view/home/card.dart';
 import 'package:coinspace/view/home/top_move_screen.dart';
+import 'package:coinspace/view/market/bitcoin_screen.dart';
 import 'package:coinspace/view/profile/scan_screen.dart';
 import 'package:coinspace/widget/coin_view.dart';
 import 'package:flutter/material.dart';
@@ -45,13 +46,16 @@ class _HomeViewState extends State<HomeView> {
                 ),
               ),
               const SizedBox(width: 20),
-              SizedBox(
-                height: 24,
-                width: 24,
-                child: SvgPicture.asset(
-                  AppTheme.isLightTheme == true
-                      ? DefaultImages.h5
-                      : DefaultImages.m8,
+              InkWell(
+                onTap: () {},
+                child: SizedBox(
+                  height: 24,
+                  width: 24,
+                  child: SvgPicture.asset(
+                    AppTheme.isLightTheme == true
+                        ? DefaultImages.h5
+                        : DefaultImages.m8,
+                  ),
                 ),
               )
             ],
@@ -117,29 +121,38 @@ class _HomeViewState extends State<HomeView> {
                       padding: const EdgeInsets.only(left: 20, right: 20),
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (BuildContext context, int index) {
-                        return Padding(
-                          padding: const EdgeInsets.only(right: 14),
-                          child: Container(
-                            height: 72,
-                            width: 72,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(14),
-                              color: AppTheme.isLightTheme == true
-                                  ? HexColor(AppTheme.lightGrayString!)
-                                  : HexColor(AppTheme.darkGrayString!),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(16.0),
-                              child: Image.asset(
-                                index == 0
-                                    ? DefaultImages.h15
-                                    : index == 1
-                                        ? DefaultImages.h19
-                                        : index == 2
-                                            ? DefaultImages.h18
-                                            : index == 3
-                                                ? DefaultImages.h25
-                                                : DefaultImages.h26,
+                        return InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const BitcoinScreen()),
+                            );
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.only(right: 14),
+                            child: Container(
+                              height: 72,
+                              width: 72,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(14),
+                                color: AppTheme.isLightTheme == true
+                                    ? HexColor(AppTheme.lightGrayString!)
+                                    : HexColor(AppTheme.darkGrayString!),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Image.asset(
+                                  index == 0
+                                      ? DefaultImages.h15
+                                      : index == 1
+                                          ? DefaultImages.h19
+                                          : index == 2
+                                              ? DefaultImages.h18
+                                              : index == 3
+                                                  ? DefaultImages.h25
+                                                  : DefaultImages.h26,
+                                ),
                               ),
                             ),
                           ),
