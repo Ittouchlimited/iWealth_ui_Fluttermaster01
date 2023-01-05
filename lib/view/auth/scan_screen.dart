@@ -22,7 +22,7 @@ class _ScanScreenState extends State<ScanScreen> {
         padding: const EdgeInsets.only(left: 20, right: 20),
         child: Column(
           children: [
-            SizedBox(height: MediaQuery.of(context).padding.top + 20),
+            SizedBox(height: MediaQuery.of(context).padding.top + 15),
             Row(
               children: [
                 const BackIcon(),
@@ -81,7 +81,7 @@ class _ScanScreenState extends State<ScanScreen> {
                   Padding(
                     padding: const EdgeInsets.only(left: 15, right: 15),
                     child: Container(
-                      height: Get.height / 3.8,
+                      height: Get.height / 3.6,
                       width: Get.width,
                       decoration: BoxDecoration(
                         image: DecorationImage(
@@ -95,7 +95,7 @@ class _ScanScreenState extends State<ScanScreen> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 30),
+                  const SizedBox(height: 20),
                   Center(
                     child: Text(
                       "Back of your ID",
@@ -162,7 +162,7 @@ class _ScanScreenState extends State<ScanScreen> {
                       )
                     ],
                   ),
-                  const SizedBox(height: 30),
+                  const SizedBox(height: 20),
                 ],
               ),
             ),

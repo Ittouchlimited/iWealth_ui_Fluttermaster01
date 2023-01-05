@@ -172,7 +172,7 @@ class CardView extends StatelessWidget {
   Widget bottomCard(
       String image, String image1, String text1, String text2, String text3) {
     return Container(
-      height: Get.height / 4,
+      height: Get.height / 3.5,
       width: Get.width,
       decoration: BoxDecoration(
         color: AppTheme.isLightTheme == true

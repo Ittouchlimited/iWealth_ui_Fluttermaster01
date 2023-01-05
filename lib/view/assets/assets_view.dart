@@ -90,7 +90,7 @@ class _AssetsViewState extends State<AssetsView> {
                               onTap: () {
                                 Get.bottomSheet(
                                   Container(
-                                    height: Get.height / 3.2,
+                                    height: Get.height / 2.8,
                                     width: Get.width,
                                     decoration: BoxDecoration(
                                       color: AppTheme.isLightTheme == true
