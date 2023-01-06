@@ -1,9 +1,7 @@
 // ignore_for_file: unnecessary_null_in_if_null_operators
 
-import 'package:coinspace/config/images.dart';
 import 'package:coinspace/config/textstyle.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class CustomTextField extends StatelessWidget {
   final String? hintText;
@@ -27,16 +25,18 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 50,
-      // decoration: BoxDecoration(
-      //   color: Theme.of(context).appBarTheme.backgroundColor,
-      //   image: DecorationImage(
-      //     image: AssetImage(
-      //       AppTheme.isLightTheme == true
-      //           ? DefaultImages.borderBG
-      //           : DefaultImages.darkInput,
-      //     ),
-      //   ),
-      // ),
+      decoration: BoxDecoration(
+        color: Theme.of(context).appBarTheme.backgroundColor,
+        borderRadius: BorderRadius.circular(30),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.1),
+            spreadRadius: 5,
+            blurRadius: 10,
+            offset: const Offset(0, 1),
+          ),
+        ],
+      ),
       child: TextFormField(
         keyboardType: inputType,
         obscureText: isObsecure,
@@ -47,8 +47,7 @@ class CustomTextField extends StatelessWidget {
             ),
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.only(top: 13, left: 14, right: 14),
-          // border: InputBorder.none,
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
+          border: InputBorder.none,
           suffixIcon: sufix ?? const SizedBox(),
           prefixIcon: prefix ?? null,
           hintText: hintText,
