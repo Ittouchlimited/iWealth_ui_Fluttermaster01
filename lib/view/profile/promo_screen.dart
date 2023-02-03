@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:coinspace/widget/back_icon.dart';
 import 'package:coinspace/widget/custom_button.dart';
 import 'package:coinspace/widget/custom_textfiled.dart';

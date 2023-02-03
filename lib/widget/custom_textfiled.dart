@@ -1,4 +1,4 @@
-// ignore_for_file: unnecessary_null_in_if_null_operators
+// ignore_for_file: unnecessary_null_in_if_null_operators, deprecated_member_use
 
 import 'package:coinspace/config/textstyle.dart';
 import 'package:flutter/material.dart';

@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use, duplicate_ignore
+
 import 'package:coinspace/config/textstyle.dart';
 import 'package:coinspace/controller/profile_controller.dart';
 import 'package:coinspace/widget/back_icon.dart';
@@ -88,6 +90,7 @@ class _SecurityScreenState extends State<SecurityScreen> {
                                     Icons.arrow_forward_ios,
                                     color: Theme.of(context)
                                         .textTheme
+                                        // ignore: deprecated_member_use
                                         .bodyText1!
                                         .color,
                                     size: 12,

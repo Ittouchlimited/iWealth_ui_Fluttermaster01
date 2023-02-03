@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:coinspace/config/images.dart';
 import 'package:coinspace/controller/splash_controller.dart';
 import 'package:flutter/material.dart';
