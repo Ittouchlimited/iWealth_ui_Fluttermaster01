@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>73716784693-njp4eavj676bbniee8n91mbjsefl0dnt.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.73716784693-njp4eavj676bbniee8n91mbjsefl0dnt</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>73716784693-502ki5hiiob67h5govmp5379ehep8ara.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAFk_vwRFWOXckmQbmBS_i96wt5lAJXC_o</string>
+	<key>GCM_SENDER_ID</key>
+	<string>73716784693</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>iWealth</string>
+	<key>PROJECT_ID</key>
+	<string>iwealth-9cf6f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>iwealth-9cf6f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:73716784693:ios:29cda26ae80524206f5b7c</string>
+</dict>
+</plist>

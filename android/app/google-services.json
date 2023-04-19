@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "73716784693",
+    "project_id": "iwealth-9cf6f",
+    "storage_bucket": "iwealth-9cf6f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:73716784693:android:89d0f30c607699d76f5b7c",
+        "android_client_info": {
+          "package_name": "com.iwealth.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "73716784693-502ki5hiiob67h5govmp5379ehep8ara.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iwealth.app",
+            "certificate_hash": "72f6405579dd1f43254c07c58a26eca56cb4e59c"
+          }
+        },
+        {
+          "client_id": "73716784693-5q04k9c6cg3mrihum75h3akt0p9q80g1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfkicgrj_XlxGtTbLx4G4gKdstU5c-k5M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "73716784693-2tnvm2e7f7cog86h803u4evujngemq47.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "73716784693-njp4eavj676bbniee8n91mbjsefl0dnt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "iWealth"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
