@@ -2,7 +2,7 @@
     package="com.example.coinspace">
       <uses-permission android:name="android.permission.INTERNET"/> 
    <application
-        android:label="CoinSpace"
+        android:label="iWealth"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

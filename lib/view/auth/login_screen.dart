@@ -24,6 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
       backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
       body: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20),
+
         child: Column(
           children: [
             Expanded(
@@ -36,12 +37,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     children: [
                       SizedBox(height: MediaQuery.of(context).padding.top + 20),
                       Container(
-                        height: 48,
-                        width: 48,
+                        height: 80,
+                        width: 240,
                         decoration: const BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage(
-                              DefaultImages.appIcon,
+                              DefaultImages.iwealthappIcon,
                             ),
                             fit: BoxFit.fill,
                           ),
@@ -89,16 +90,16 @@ class _LoginScreenState extends State<LoginScreen> {
                             color: HexColor(AppTheme.secondaryColorString!),
                           ),
                         ),
-                        sufix: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: SvgPicture.asset(
+                        sufix: const Padding(
+                          padding: EdgeInsets.all(12.0),
+                          /*child: SvgPicture.asset(
                             DefaultImages.eye,
                             color: HexColor(AppTheme.secondaryColorString!),
-                          ),
+                          ),*/
                         ),
                         textEditingController: TextEditingController(),
-                        inputType: TextInputType.emailAddress,
-                        isObsecure: false,
+                        inputType: TextInputType.visiblePassword,
+                        isObsecure: true,
                       ),
                       const SizedBox(height: 30),
                       CustomButton(
@@ -118,11 +119,44 @@ class _LoginScreenState extends State<LoginScreen> {
                               .textTheme
                               .bodyText1!
                               .copyWith(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w800,
-                                color: HexColor(AppTheme.primaryColorString!),
-                              ),
+                            fontSize: 16,
+                            fontWeight: FontWeight.w800,
+                            color: HexColor(AppTheme.primaryColorString!),
+                          ),
                         ),
+                      ),
+
+                      const SizedBox(height: 30),
+                      Center(
+                        child: Text(
+                          "Or Sign in with Google",
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyText1!
+                              .copyWith(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w800,
+                            color: HexColor(AppTheme.secondaryColorString!),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 30),
+                      //SizedBox(height: MediaQuery.of(context).padding.left + 20),
+                      Center(
+                      child:
+                      Container(
+                        alignment: AlignmentDirectional.center,
+                        height: 40,
+                        width: 40,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                              DefaultImages.googleLogo,
+                            ),
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ),
                       ),
                       const SizedBox(height: 20),
                     ],

@@ -55,7 +55,7 @@ class _SelectScreenState extends State<SelectScreen> {
                           size: 20,
                         ),
                         textEditingController:
-                            TextEditingController(text: "Singapore"),
+                            TextEditingController(text: "Nigeria"),
                         inputType: TextInputType.number,
                         isObsecure: false,
                       ),

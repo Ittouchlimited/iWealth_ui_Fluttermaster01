@@ -2,7 +2,9 @@
 
 import 'package:coinspace/config/images.dart';
 import 'package:coinspace/config/textstyle.dart';
+import 'package:coinspace/view/market/about_screen.dart';
 import 'package:coinspace/view/market/bitcoin_screen.dart';
+import 'package:coinspace/view/market/lifechecker_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -28,7 +30,7 @@ class CoinView extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const BitcoinScreen()),
+          MaterialPageRoute(builder: (context) => const LifeCheckerScreen()),
         );
       },
       child: Container(

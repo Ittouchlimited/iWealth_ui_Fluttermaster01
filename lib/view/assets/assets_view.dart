@@ -5,7 +5,9 @@ import 'package:coinspace/config/textstyle.dart';
 import 'package:coinspace/controller/home_controller.dart';
 import 'package:coinspace/view/assets/notification_view.dart';
 import 'package:coinspace/view/home/card.dart';
+import 'package:coinspace/view/market/asset_screen.dart';
 import 'package:coinspace/view/market/bitcoin_screen.dart';
+import 'package:coinspace/view/market/empty_screen.dart';
 import 'package:coinspace/view/profile/scan_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -76,7 +78,7 @@ class _AssetsViewState extends State<AssetsView> {
                           children: [
                             const SizedBox(height: 30),
                             Text(
-                              "Portfolio Value",
+                              "Portfolio Overview",
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyText1!
@@ -176,7 +178,7 @@ class _AssetsViewState extends State<AssetsView> {
                                   Row(
                                     children: [
                                       Text(
-                                        "QTY",
+                                        "Portfolio Items",
                                         style: Theme.of(context)
                                             .textTheme
                                             .bodyText1!
@@ -186,7 +188,7 @@ class _AssetsViewState extends State<AssetsView> {
                                             ),
                                       ),
                                       const SizedBox(width: 5),
-                                      Container(
+                                      /*Container(
                                         height: 12,
                                         width: 12,
                                         decoration: const BoxDecoration(
@@ -196,13 +198,13 @@ class _AssetsViewState extends State<AssetsView> {
                                             ),
                                           ),
                                         ),
-                                      ),
+                                      ),*/
                                     ],
                                   ),
                                   Row(
                                     children: [
                                       Text(
-                                        "All Time．P/L",
+                                        "",
                                         style: Theme.of(context)
                                             .textTheme
                                             .bodyText1!
@@ -214,19 +216,19 @@ class _AssetsViewState extends State<AssetsView> {
                                             ),
                                       ),
                                       const SizedBox(width: 5),
-                                      SizedBox(
+                                      /*SizedBox(
                                         height: 12,
                                         width: 12,
                                         child: SvgPicture.asset(
                                           DefaultImages.a1,
                                         ),
-                                      ),
+                                      ),*/
                                     ],
                                   ),
                                   Row(
                                     children: [
                                       Text(
-                                        "Price",
+                                        "",
                                         style: Theme.of(context)
                                             .textTheme
                                             .bodyText1!
@@ -238,7 +240,7 @@ class _AssetsViewState extends State<AssetsView> {
                                             ),
                                       ),
                                       const SizedBox(width: 5),
-                                      Container(
+                                     /* Container(
                                         height: 12,
                                         width: 12,
                                         decoration: const BoxDecoration(
@@ -248,7 +250,7 @@ class _AssetsViewState extends State<AssetsView> {
                                             ),
                                           ),
                                         ),
-                                      ),
+                                      ),*/
                                     ],
                                   ),
                                 ],
@@ -258,7 +260,7 @@ class _AssetsViewState extends State<AssetsView> {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                for (var i = 0; i < 5; i++)
+                                for (var i = 0; i < 3; i++)
                                   Padding(
                                     padding: const EdgeInsets.only(bottom: 15),
                                     child: InkWell(
@@ -267,7 +269,7 @@ class _AssetsViewState extends State<AssetsView> {
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) =>
-                                                const BitcoinScreen(),
+                                                const AssetScreen(),
                                           ),
                                         );
                                       },
@@ -303,13 +305,13 @@ class _AssetsViewState extends State<AssetsView> {
                                                           child: Image.asset(
                                                             i == 0
                                                                 ? DefaultImages
-                                                                    .h14
+                                                                    .h14a
                                                                 : i == 1
                                                                     ? DefaultImages
-                                                                        .h19
+                                                                        .h14a
                                                                     : i == 2
                                                                         ? DefaultImages
-                                                                            .h26
+                                                                            .h19a
                                                                         : i == 3
                                                                             ? DefaultImages.h18
                                                                             : DefaultImages.h25,
@@ -317,12 +319,12 @@ class _AssetsViewState extends State<AssetsView> {
                                                         ),
                                                         Text(
                                                           i == 0
-                                                              ? "  \$819,702"
+                                                              ? "  Family Car"
                                                               : i == 1
-                                                                  ? "  \$178,658"
+                                                                  ? "  Office AC"
                                                                   : i == 2
-                                                                      ? "  \$93,267"
-                                                                      : "  \$7,768",
+                                                                      ? "  House"
+                                                                      : "",
                                                           style:
                                                               Theme.of(context)
                                                                   .textTheme
@@ -340,12 +342,12 @@ class _AssetsViewState extends State<AssetsView> {
                                                     const SizedBox(height: 8),
                                                     Text(
                                                       i == 0
-                                                          ? "20.406595 BTC"
+                                                          ? ""
                                                           : i == 1
-                                                              ? "65.106697 ETH"
+                                                              ? ""
                                                               : i == 2
-                                                                  ? "93,267.02 USDC"
-                                                                  : "56212.58 DOGE",
+                                                                  ? ""
+                                                                  : "",
                                                       style: Theme.of(context)
                                                           .textTheme
                                                           .bodyText1!
@@ -372,15 +374,15 @@ class _AssetsViewState extends State<AssetsView> {
                                                       i == 0
                                                           ? "-84,265.36"
                                                           : i == 1
-                                                              ? "+44,199.00"
+                                                              ? ""
                                                               : i == 2
-                                                                  ? "+44,199.00"
-                                                                  : "+44,199.00",
+                                                                  ? ""
+                                                                  : "",
                                                       style: Theme.of(context)
                                                           .textTheme
                                                           .bodyText1!
                                                           .copyWith(
-                                                            fontSize: 14,
+                                                            fontSize: 1,
                                                             fontWeight:
                                                                 FontWeight.w800,
                                                             color: i == 0 ||
@@ -396,15 +398,15 @@ class _AssetsViewState extends State<AssetsView> {
                                                       i == 0
                                                           ? "-10.28%"
                                                           : i == 1
-                                                              ? "-8.15%"
+                                                              ? ""
                                                               : i == 2
-                                                                  ? "+0.03%"
-                                                                  : "+1.85%",
+                                                                  ? ""
+                                                                  : "",
                                                       style: Theme.of(context)
                                                           .textTheme
                                                           .bodyText1!
                                                           .copyWith(
-                                                            fontSize: 12,
+                                                            fontSize: 1,
                                                             fontWeight:
                                                                 FontWeight.w400,
                                                             color: i == 0 ||
@@ -441,22 +443,29 @@ class _AssetsViewState extends State<AssetsView> {
                                                             fontSize: 14,
                                                             fontWeight:
                                                                 FontWeight.w800,
+                                                        color: i == 0 ||
+                                                            i == 1
+                                                            ? HexColor(AppTheme
+                                                            .redColorString!)
+                                                            : HexColor(AppTheme
+                                                            .greenColorString!),
+
                                                           ),
                                                     ),
                                                     const SizedBox(height: 8),
                                                     Text(
                                                       i == 0
-                                                          ? "+2.16%"
+                                                          ? ""
                                                           : i == 1
-                                                              ? "+1.15%"
+                                                              ? ""
                                                               : i == 2
-                                                                  ? "+0.00%"
-                                                                  : "+0.23%",
+                                                                  ? ""
+                                                                  : "",
                                                       style: Theme.of(context)
                                                           .textTheme
                                                           .bodyText1!
                                                           .copyWith(
-                                                            fontSize: 12,
+                                                            fontSize: 1,
                                                             fontWeight:
                                                                 FontWeight.w400,
                                                             color: i == 2

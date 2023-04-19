@@ -2,13 +2,18 @@
 
 import 'package:coinspace/config/images.dart';
 import 'package:coinspace/config/textstyle.dart';
+import 'package:coinspace/view/auth/login_screen.dart';
 import 'package:coinspace/view/auth/onboarding_screen.dart';
+import 'package:coinspace/view/home/home_view.dart';
+import 'package:coinspace/view/market/empty_screen.dart';
 import 'package:coinspace/view/profile/app_setting_screen.dart';
 import 'package:coinspace/view/profile/notification_screen.dart';
 import 'package:coinspace/view/profile/profile_screen.dart';
 import 'package:coinspace/view/profile/reward_screen.dart';
 import 'package:coinspace/view/profile/scan_screen.dart';
 import 'package:coinspace/view/profile/security_screen.dart';
+import 'package:coinspace/view/profile/sliver_plan_screen.dart';
+import 'package:coinspace/view/profile/platinum_plan_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -100,7 +105,7 @@ class _ProfileViewState extends State<ProfileView> {
                     ),
                     const SizedBox(height: 5),
                     Text(
-                      "coinspace@mail.com",
+                      "tony@stark.com",
                       style: Theme.of(context).textTheme.bodyText1!.copyWith(
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
@@ -109,54 +114,68 @@ class _ProfileViewState extends State<ProfileView> {
                     ),
                     const SizedBox(height: 20),
                     Container(
-                      height: 172,
+                      height: 12,
                       width: Get.width,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            AppTheme.isLightTheme == true
-                                ? DefaultImages.m4
-                                : DefaultImages.darkPay,
-                          ),
-                          fit: BoxFit.fill,
-                        ),
+                      decoration: const BoxDecoration(
+                        //image: DecorationImage(
+                          //image: AssetImage(
+                            //AppTheme.isLightTheme == true
+                                //? DefaultImages.m4
+                                //: DefaultImages.darkPay,
+                          //),
+                         // fit: BoxFit.fill,
+                       // ),
                       ),
                     ),
                     const SizedBox(height: 20),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        for (var i = 0; i < 6; i++)
+                        for (var i = 0; i < 8; i++)
                           GestureDetector(
                             onTap: () {
                               if (i == 0) {
                                 Get.to(
-                                  const ProfileScreen(),
+                                  const EmptyScreen(),
                                   transition: Transition.rightToLeft,
                                 );
                               } else if (i == 1) {
                                 Get.to(
-                                  const RewardScreen(),
+                                  const SilverPlanScreen(),
                                   transition: Transition.rightToLeft,
                                 );
                               } else if (i == 2) {
                                 Get.to(
-                                  const AppSettingScreen(),
+                                  const PlatinumPlanScreen(),
                                   transition: Transition.rightToLeft,
                                 );
                               } else if (i == 3) {
                                 Get.to(
-                                  const NotificationScreen(),
+                                  const AppSettingScreen(),
                                   transition: Transition.rightToLeft,
                                 );
                               } else if (i == 4) {
                                 Get.to(
-                                  const SecurityScreen(),
+                                  const NotificationScreen(),
                                   transition: Transition.rightToLeft,
                                 );
                               } else if (i == 5) {
-                                Get.offAll(
-                                  const OnBoardingScreen(),
+                                Get.to(
+                                  const SecurityScreen(),
+                                  transition: Transition.rightToLeft,
+                                );
+                              }
+                              else if (i == 6) {
+                                //Get.offAll(
+                                Get.to(
+                                  const EmptyScreen(),
+                                  transition: Transition.rightToLeft,
+                                );
+                              }
+                              else if (i == 7) {
+                                //Get.offAll(
+                                Get.to(
+                                  const LoginScreen(),
                                   transition: Transition.rightToLeft,
                                 );
                               }
@@ -191,8 +210,14 @@ class _ProfileViewState extends State<ProfileView> {
                                                           : i == 4
                                                               ? DefaultImages
                                                                   .m20
-                                                              : DefaultImages
-                                                                  .m24,
+                                              : i == 5
+                                              ? DefaultImages
+                                          .m24
+                                              : i == 6
+                                              ? DefaultImages
+                                          .m24
+                                              : DefaultImages
+                                          .m24,
                                         ),
                                       ),
                                     ),
@@ -201,14 +226,18 @@ class _ProfileViewState extends State<ProfileView> {
                                       i == 0
                                           ? "Profile"
                                           : i == 1
-                                              ? "Rewards"
+                                              ? "Silver Plan"
                                               : i == 2
-                                                  ? "App settings"
-                                                  : i == 3
-                                                      ? "Notifications"
-                                                      : i == 4
+                                                  ? "Platinum Plan"
+                                          : i == 3
+                                          ? "App Settings"
+                                          : i == 4
+                                      ? "Notifications"
+                                          : i == 5
                                                           ? "Security"
-                                                          : "Support",
+                                          : i == 6
+                                          ? "Support"
+                                            : "Logout",
                                       style: Theme.of(context)
                                           .textTheme
                                           .bodyText1!

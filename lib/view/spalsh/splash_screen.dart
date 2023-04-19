@@ -30,12 +30,12 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              height: 72,
-              width: 72,
+              height: 350,
+              width: 350,
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
-                    DefaultImages.appIcon,
+                    DefaultImages.iwealthSquareappIcon,
                   ),
                   fit: BoxFit.fill,
                 ),
@@ -43,7 +43,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             const SizedBox(height: 15),
             Text(
-              "CoinSpace",
+              "",
               style: Theme.of(context).textTheme.bodyText1!.copyWith(
                     fontSize: 24,
                     fontWeight: FontWeight.w800,

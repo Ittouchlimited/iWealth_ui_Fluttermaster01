@@ -2,6 +2,7 @@
 
 import 'package:coinspace/config/images.dart';
 import 'package:coinspace/config/textstyle.dart';
+import 'package:coinspace/view/market/market_view.dart';
 import 'package:coinspace/view/tab_screen.dart';
 import 'package:coinspace/widget/back_icon.dart';
 import 'package:coinspace/widget/custom_button.dart';
@@ -56,7 +57,8 @@ class _VerifiedScreenState extends State<VerifiedScreen> {
             const SizedBox(height: 10),
             Center(
               child: Text(
-                "Now you can fund your account so you're\nready to invest in crypto.",
+                //"Now you update your portfolio\nand enjoy our services at Norrenberger.",
+                "Enjoy our services at Norrenberger.",
                 style: Theme.of(context).textTheme.bodyText1!.copyWith(
                       fontSize: 16,
                       fontWeight: FontWeight.w400,
@@ -72,6 +74,7 @@ class _VerifiedScreenState extends State<VerifiedScreen> {
               onTap: () {
                 Get.offAll(
                   const TabScreen(),
+                  //const MarketView(),
                   transition: Transition.rightToLeft,
                 );
               },

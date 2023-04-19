@@ -4,6 +4,7 @@ import 'package:coinspace/config/images.dart';
 import 'package:coinspace/config/textstyle.dart';
 import 'package:coinspace/view/profile/payment_screen.dart';
 import 'package:coinspace/widget/back_icon.dart';
+import 'package:coinspace/widget/custom_textfiled.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -70,7 +71,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      "Profile Token",
+                                      "Profile ID",
                                       style: Theme.of(context)
                                           .textTheme
                                           .bodyText1!
@@ -81,7 +82,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     ),
                                     const SizedBox(height: 10),
                                     Text(
-                                      "8219F492-3FF3-401C-A2C9-FEB4C9E73E6D",
+                                      "82-3FF3-401D",
                                       style: Theme.of(context)
                                           .textTheme
                                           .bodyText1!
@@ -124,7 +125,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          for (var i = 0; i < 4; i++)
+                          for (var i = 0; i < 3; i++)
                             GestureDetector(
                               onTap: () {
                                 if (i == 1) {
@@ -163,12 +164,28 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                           ),
                                         ),
                                       ),
+
+                                      const SizedBox(height: 40),
+                                      CustomTextField(
+                                        hintText: "First Name",
+                                        prefix: Padding(
+                                          padding: const EdgeInsets.all(10.0),
+                                          child: SvgPicture.asset(
+                                            DefaultImages.user,
+                                            color: HexColor(AppTheme.secondaryColorString!),
+                                          ),
+                                        ),
+                                        sufix: const SizedBox(),
+                                        textEditingController: TextEditingController(),
+                                        inputType: TextInputType.name,
+                                        isObsecure: false,
+                                      ),
                                       const SizedBox(width: 20),
                                       Text(
                                         i == 0
-                                            ? "Profile"
+                                            ? "KYC"
                                             : i == 1
-                                                ? "Payment methods"
+                                                ? "Manage Portfolio"
                                                 : i == 2
                                                     ? "Phone number"
                                                     : "Email",

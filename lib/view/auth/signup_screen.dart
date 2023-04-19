@@ -3,6 +3,7 @@
 import 'package:coinspace/config/images.dart';
 import 'package:coinspace/config/textstyle.dart';
 import 'package:coinspace/view/auth/email_screen.dart';
+import 'package:coinspace/view/auth/number_screen.dart';
 import 'package:coinspace/widget/back_icon.dart';
 import 'package:coinspace/widget/custom_button.dart';
 import 'package:coinspace/widget/custom_textfiled.dart';
@@ -24,6 +25,8 @@ class _SignupScreenState extends State<SignupScreen> {
       backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
       body: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20),
+
+        //**1
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -39,7 +42,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     children: [
                       const SizedBox(height: 50),
                       Text(
-                        "Join CoinSpace",
+                        "Join iWealth",
                         style: Theme.of(context).textTheme.bodyText1!.copyWith(
                               fontSize: 24,
                               fontWeight: FontWeight.w800,
@@ -74,7 +77,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         ],
                       ),
                       const SizedBox(height: 40),
-                      CustomTextField(
+                      /*CustomTextField(
                         hintText: "First Name",
                         prefix: Padding(
                           padding: const EdgeInsets.all(10.0),
@@ -87,10 +90,10 @@ class _SignupScreenState extends State<SignupScreen> {
                         textEditingController: TextEditingController(),
                         inputType: TextInputType.name,
                         isObsecure: false,
-                      ),
+                      ),*/
                       const SizedBox(height: 30),
                       CustomTextField(
-                        hintText: "Last Name",
+                        hintText: "Enter Username",
                         prefix: Padding(
                           padding: const EdgeInsets.all(10.0),
                           child: SvgPicture.asset(
@@ -105,7 +108,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       ),
                       const SizedBox(height: 30),
                       CustomTextField(
-                        hintText: "Email",
+                        hintText: "Email Address",
                         prefix: Padding(
                           padding: const EdgeInsets.all(10.0),
                           child: SvgPicture.asset(
@@ -128,16 +131,38 @@ class _SignupScreenState extends State<SignupScreen> {
                             color: HexColor(AppTheme.secondaryColorString!),
                           ),
                         ),
-                        sufix: Padding(
+                        sufix: const Padding(
+                          padding: EdgeInsets.all(10.0),
+                          //child: SvgPicture.asset(
+                            //DefaultImages.eye,
+                            //color: HexColor(AppTheme.secondaryColorString!),
+                          //),
+                        ),
+                        textEditingController: TextEditingController(),
+                        inputType: TextInputType.visiblePassword,
+                        isObsecure: true,
+                      ),
+                      const SizedBox(height: 30),
+                      CustomTextField(
+                        hintText: "Confirm Password",
+                        prefix: Padding(
                           padding: const EdgeInsets.all(10.0),
                           child: SvgPicture.asset(
-                            DefaultImages.eye,
+                            DefaultImages.lock,
                             color: HexColor(AppTheme.secondaryColorString!),
                           ),
                         ),
+                        sufix: const Padding(
+                          padding: EdgeInsets.all(10.0),
+                          /*child: SvgPicture.asset(
+                            DefaultImages.eye,
+                            color: HexColor(AppTheme.secondaryColorString!),
+                          ),*/
+                        ),
                         textEditingController: TextEditingController(),
-                        inputType: TextInputType.emailAddress,
-                        isObsecure: false,
+                        inputType: TextInputType.visiblePassword,
+                        isObsecure: true,
+
                       ),
                       const SizedBox(height: 30),
                       Row(
@@ -235,7 +260,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         text: "Sign Up",
                         onTap: () {
                           Get.to(
-                            const EmailScreen(),
+                            const NumberScreen(),
                             transition: Transition.rightToLeft,
                           );
                         },

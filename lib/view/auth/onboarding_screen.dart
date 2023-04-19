@@ -70,8 +70,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             Obx(
               () => Text(
                 authController.flag.value == 1
-                    ? "World’s most powerful\ncrypto exchange"
-                    : "Buy \$ Sell it instantly",
+                    ? "Track everything\n you own on the go."
+                    : "Be ready for\nall emergencies.",
                 style: Theme.of(context).textTheme.bodyText1!.copyWith(
                       fontSize: 24,
                       fontWeight: FontWeight.w800,
@@ -84,8 +84,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             Obx(
               () => Text(
                 authController.flag.value == 1
-                    ? "The most advanced trading tools like margin\nand bot trading with hundreds of new assets"
-                    : "Purchase crypto and cash out with your\ncredit card or bank account",
+                    ? ""
+                    : "",
                 style: Theme.of(context).textTheme.bodyText1!.copyWith(
                       fontSize: 14,
                       fontWeight: FontWeight.w400,

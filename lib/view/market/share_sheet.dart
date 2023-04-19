@@ -62,7 +62,7 @@ class _ShareSheetState extends State<ShareSheet> {
                       const SizedBox(height: 10),
                       Center(
                         child: Text(
-                          "Share the Bitcoin price chart",
+                          "Share your entire portfolio",
                           style:
                               Theme.of(context).textTheme.bodyText1!.copyWith(
                                     fontSize: 16,
@@ -100,7 +100,7 @@ class _ShareSheetState extends State<ShareSheet> {
                                     ),
                                     const SizedBox(width: 14),
                                     Text(
-                                      "CoinSpace",
+                                      "iWealth",
                                       style: Theme.of(context)
                                           .textTheme
                                           .bodyText1!
@@ -218,7 +218,7 @@ class _ShareSheetState extends State<ShareSheet> {
                           column(DefaultImages.m16, "Messages"),
                           column(DefaultImages.m13, "Story"),
                           column(DefaultImages.m25, "Twitter"),
-                          column(DefaultImages.m6, "Copy Link"),
+                          column(DefaultImages.m6, "Copy"),
                           column(DefaultImages.m7, "More"),
                         ],
                       ),

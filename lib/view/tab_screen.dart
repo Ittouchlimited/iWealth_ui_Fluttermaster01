@@ -4,6 +4,9 @@ import 'package:coinspace/config/images.dart';
 import 'package:coinspace/config/textstyle.dart';
 import 'package:coinspace/controller/home_controller.dart';
 import 'package:coinspace/view/assets/assets_view.dart';
+import 'package:coinspace/view/assets/portfolio_view.dart';
+import 'package:coinspace/view/home/dashboard_portfolio.dart';
+import 'package:coinspace/view/home/dashboard_subscribe.dart';
 import 'package:coinspace/view/home/home_view.dart';
 import 'package:coinspace/view/market/market_view.dart';
 import 'package:coinspace/view/profile/profile_view.dart';
@@ -50,7 +53,7 @@ class _TabScreenState extends State<TabScreen> {
                   homeController.tabFlag.value == 1
                       ? DefaultImages.tab2Select
                       : DefaultImages.tab2,
-                  "Assets",
+                  "Portfolio",
                   homeController.tabFlag.value == 1
                       ? HexColor(AppTheme.primaryColorString!)
                       : HexColor(AppTheme.secondaryColorString!),
@@ -62,7 +65,7 @@ class _TabScreenState extends State<TabScreen> {
                   homeController.tabFlag.value == 2
                       ? DefaultImages.tab3Select
                       : DefaultImages.tab3,
-                  "Market",
+                  "Subscribe",
                   homeController.tabFlag.value == 2
                       ? HexColor(AppTheme.primaryColorString!)
                       : HexColor(AppTheme.secondaryColorString!),
@@ -74,7 +77,7 @@ class _TabScreenState extends State<TabScreen> {
                   homeController.tabFlag.value == 3
                       ? DefaultImages.tab4Select
                       : DefaultImages.tab4,
-                  "Profile",
+                  "Hub",
                   homeController.tabFlag.value == 3
                       ? HexColor(AppTheme.primaryColorString!)
                       : HexColor(AppTheme.secondaryColorString!),
@@ -91,9 +94,10 @@ class _TabScreenState extends State<TabScreen> {
         () => homeController.tabFlag.value == 0
             ? const HomeView()
             : homeController.tabFlag.value == 1
-                ? const AssetsView()
+            //? const AssetsView()
+            ? const DashboardPortfolio()
                 : homeController.tabFlag.value == 2
-                    ? const MarketView()
+                    ? const DashboardSubscribe()
                     : const ProfileView(),
       ),
     );

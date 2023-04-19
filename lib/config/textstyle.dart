@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
-  static String? primaryColorString = "#4A3EF6";
+  static String? primaryColorString = "#F16024";
   static String? secondaryColorString = "#828A99";
   static String? redColorString = "#FF7171";
   static String? greenColorString = "#39CC77";

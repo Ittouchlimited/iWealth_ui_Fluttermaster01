@@ -3,7 +3,8 @@
 import 'package:coinspace/config/images.dart';
 import 'package:coinspace/config/textstyle.dart';
 import 'package:coinspace/view/auth/number_screen.dart';
-import 'package:coinspace/view/auth/personal_information_screen.dart';
+//import 'package:coinspace/view/auth/personal_information_screen.dart';
+import 'package:coinspace/view/auth/id_type_screen.dart';
 import 'package:coinspace/widget/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -48,7 +49,7 @@ class _AccountScreenState extends State<AccountScreen> {
                   ),
                   const SizedBox(height: 20),
                   Text(
-                    "Let's secure your account",
+                    "Let's complete your account setup",
                     style: Theme.of(context).textTheme.bodyText1!.copyWith(
                           fontSize: 24,
                           fontWeight: FontWeight.w800,
@@ -70,8 +71,8 @@ class _AccountScreenState extends State<AccountScreen> {
                                       i == 0
                                           ? "Step1. Create your account"
                                           : i == 1
-                                              ? "Step2. Phone Number"
-                                              : "Step3. Verify your identity",
+                                              ? "Step2. Complete your profile"
+                                              : "Step3. Complete KYC",
                                       style: Theme.of(context)
                                           .textTheme
                                           .bodyText1!
@@ -126,8 +127,8 @@ class _AccountScreenState extends State<AccountScreen> {
                                       i == 0
                                           ? "Step1. Create your account"
                                           : i == 1
-                                              ? "Step2. Phone Number"
-                                              : "Step3. Verify your identity",
+                                              ? "Step2. Complete your profile"
+                                              : "Step3. Complete KYC",
                                       style: Theme.of(context)
                                           .textTheme
                                           .bodyText1!
@@ -176,7 +177,8 @@ class _AccountScreenState extends State<AccountScreen> {
               onTap: () {
                 if (widget.isAuth == true) {
                   Get.to(
-                    const PersonalInformationScreen(),
+                    //const PersonalInformationScreen(),
+                    const IdTypeScreen(),
                     transition: Transition.rightToLeft,
                   );
                 } else {

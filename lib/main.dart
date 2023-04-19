@@ -60,7 +60,7 @@ class _MyAppState extends State<MyApp> {
     ));
 
     return GetMaterialApp(
-      title: 'CoinSpace',
+      title: 'iWealth',
       theme: AppTheme.getTheme(),
       debugShowCheckedModeBanner: false,
       home: const SplashScreen(),

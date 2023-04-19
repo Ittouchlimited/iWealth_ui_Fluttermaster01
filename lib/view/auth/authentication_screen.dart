@@ -1,7 +1,10 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:coinspace/config/textstyle.dart';
+import 'package:coinspace/view/auth/account_screen.dart';
 import 'package:coinspace/view/auth/select_screen.dart';
+import 'package:coinspace/view/auth/verification_screen.dart';
+import 'package:coinspace/view/auth/verified_screen.dart';
 import 'package:coinspace/widget/back_icon.dart';
 import 'package:coinspace/widget/custom_button.dart';
 import 'package:coinspace/widget/custom_textfiled.dart';
@@ -37,15 +40,16 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                     children: [
                       const SizedBox(height: 30),
                       Text(
-                        "Enter authentication code",
+                        "Create App Password",
                         style: Theme.of(context).textTheme.bodyText1!.copyWith(
                               fontSize: 24,
                               fontWeight: FontWeight.w800,
+
                             ),
                       ),
                       const SizedBox(height: 10),
                       Text(
-                        "Enter the 7-diait code we just texted\nto your phone number",
+                        "Enter a 4-digit code\nto protect your iWealth App",
                         style: Theme.of(context).textTheme.bodyText1!.copyWith(
                               fontSize: 16,
                               fontWeight: FontWeight.w400,
@@ -53,16 +57,21 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                               height: 1.6,
                             ),
                       ),
-                      const SizedBox(height: 20),
-                      CustomTextField(
+                      const SizedBox(height: 10),
+                      const TextField(
+                        keyboardType: TextInputType.number,
+                        textAlign: TextAlign.center,
+                      ),
+                      /*const SizedBox(height: 20),
+                      const CustomTextField(
                         hintText: "Code",
                         prefix: null,
-                        sufix: const SizedBox(),
-                        textEditingController:
-                            TextEditingController(text: "982806"),
-                        inputType: TextInputType.number,
-                        isObsecure: false,
-                      ),
+                        sufix: SizedBox(),
+                        //textEditingController:
+                          //  TextEditingController(text: "982806"),
+                       // inputType: TextInputType.number,
+                        //isObsecure: false,
+                      ),*/
                     ],
                   ),
                 ],
@@ -72,19 +81,23 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
               text: "Continue",
               onTap: () {
                 Get.to(
-                  const SelectScreen(),
+                  //const VerifiedScreen(
+                  const AccountScreen(
+                  //const VerificationScreen(
+                    isAuth: true,
+                  ),
                   transition: Transition.rightToLeft,
                 );
               },
             ),
-            const SizedBox(height: 15),
+           /* const SizedBox(height: 15),
             CustomButton(
               text: "Resend code",
               onTap: () {},
               bg: Colors.transparent,
               borderColor: HexColor(AppTheme.secondaryColorString!),
               textColor: HexColor(AppTheme.secondaryColorString!),
-            ),
+            ),*/
             const SizedBox(height: 20),
           ],
         ),

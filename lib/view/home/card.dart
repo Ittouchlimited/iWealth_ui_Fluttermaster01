@@ -3,6 +3,7 @@
 import 'package:coinspace/config/images.dart';
 import 'package:coinspace/config/textstyle.dart';
 import 'package:coinspace/widget/custom_button.dart';
+import 'package:coinspace/view/market/share_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -33,7 +34,7 @@ class CardView extends StatelessWidget {
                       Row(
                         children: [
                           Text(
-                            "Total Balance (USD)",
+                            "Total Worth (NGN)",
                             style: Theme.of(context)
                                 .textTheme
                                 .bodyText1!
@@ -80,7 +81,7 @@ class CardView extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Total Profit",
+                      "No. of Assets",
                       style: Theme.of(context).textTheme.bodyText1!.copyWith(
                             fontSize: 8,
                             fontWeight: FontWeight.w600,
@@ -89,7 +90,7 @@ class CardView extends StatelessWidget {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      "+93.12%",
+                      "5",
                       style: Theme.of(context).textTheme.bodyText1!.copyWith(
                             fontSize: 12,
                             fontWeight: FontWeight.w600,
@@ -110,7 +111,7 @@ class CardView extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Today Profit",
+                      "No. of Liabilities",
                       style: Theme.of(context).textTheme.bodyText1!.copyWith(
                             fontSize: 8,
                             fontWeight: FontWeight.w600,
@@ -119,7 +120,7 @@ class CardView extends StatelessWidget {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      "-11.52%",
+                      "2",
                       style: Theme.of(context).textTheme.bodyText1!.copyWith(
                             fontSize: 12,
                             fontWeight: FontWeight.w600,
@@ -128,18 +129,18 @@ class CardView extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(width: 40),
+                const SizedBox(width: 10),
                 Expanded(
                   child: SmallButton(
-                    text: "Trade",
+                    text: "Add +",
                     onTap: () {
                       Get.bottomSheet(
                         bottomCard(
                           DefaultImages.h6,
                           DefaultImages.h7,
-                          "Trade",
-                          "Buy",
-                          "Sell",
+                          "Update Portfolio",
+                          "Add Asset",
+                          "Add Liability",
                         ),
                       );
                     },
@@ -148,9 +149,14 @@ class CardView extends StatelessWidget {
                 const SizedBox(width: 10),
                 Expanded(
                   child: SmallButton(
-                    text: "Transfer",
+                    text: "Share",
                     onTap: () {
-                      Get.bottomSheet(
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ShareSheet()),
+                      );
+                      /*Get.bottomSheet(
                         bottomCard(
                           DefaultImages.h8,
                           DefaultImages.h9,
@@ -158,7 +164,7 @@ class CardView extends StatelessWidget {
                           "Deposit",
                           "Withdraw",
                         ),
-                      );
+                      );*/
                     },
                     bg: HexColor(AppTheme.secondaryColorString!),
                   ),

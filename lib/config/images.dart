@@ -1,5 +1,7 @@
 class DefaultImages {
   static const String appIcon = 'assets/images/appIcon.png';
+  static const String iwealthappIcon = 'assets/images/iwealthappIcon.png';
+  static const String iwealthSquareappIcon = 'assets/images/iwealthSquareappIcon.png';
   static const String accountImage = 'assets/images/accountImage.png';
   static const String check = 'assets/images/check.png';
   static const String email = 'assets/images/email.svg';
@@ -23,17 +25,24 @@ class DefaultImages {
   static const String h12 = 'assets/images/h12.svg';
   static const String h13 = 'assets/images/h13.png';
   static const String h14 = 'assets/images/h14.png';
+  static const String h14a = 'assets/images/h14a.png';
+  static const String h14b = 'assets/images/h14b.png';
   static const String h15 = 'assets/images/h15.png';
   static const String h16 = 'assets/images/h16.svg';
   static const String h17 = 'assets/images/h17.png';
   static const String h18 = 'assets/images/h18.png';
   static const String h19 = 'assets/images/h19.png';
+  static const String h19a = 'assets/images/h19a.png';
+  static const String h19b = 'assets/images/h19b.png';
   static const String h20 = 'assets/images/h20.png';
+  static const String h20a = 'assets/images/h20a.png';
+  static const String h20b = 'assets/images/h20b.png';
   static const String h21 = 'assets/images/h21.png';
   static const String h22 = 'assets/images/h22.png';
   static const String h23 = 'assets/images/h23.svg';
   static const String h24 = 'assets/images/h24.svg';
   static const String h25 = 'assets/images/h25.png';
+  static const String h25a = 'assets/images/h25a.png';
   static const String h26 = 'assets/images/h26.png';
   static const String h27 = 'assets/images/h27.png';
   static const String h28 = 'assets/images/h28.png';
@@ -103,4 +112,6 @@ class DefaultImages {
   static const String darklevel = 'assets/images/darklevel.png';
   static const String darkPay = 'assets/images/darkPay.png';
   static const String h4Dark = 'assets/images/h4Dark.png';
+  static const String firebaseLogo = 'assets/images/firebase_logo.png';
+  static const String googleLogo = 'assets/images/google_logo.png';
 }

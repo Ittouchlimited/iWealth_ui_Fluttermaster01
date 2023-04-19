@@ -38,7 +38,7 @@ class _PersonalInformationScreenState extends State<PersonalInformationScreen> {
                     children: [
                       const SizedBox(height: 50),
                       Text(
-                        "Join CoinSpace",
+                        "Join iWealth",
                         style: Theme.of(context).textTheme.bodyText1!.copyWith(
                               fontSize: 24,
                               fontWeight: FontWeight.w800,

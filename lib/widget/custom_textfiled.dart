@@ -19,6 +19,7 @@ class CustomTextField extends StatelessWidget {
     this.sufix,
     this.inputType,
     this.prefix,
+
   }) : super(key: key);
 
   @override

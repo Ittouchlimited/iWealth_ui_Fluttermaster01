@@ -5,9 +5,15 @@ import 'package:coinspace/config/textstyle.dart';
 import 'package:coinspace/controller/home_controller.dart';
 import 'package:coinspace/view/home/card.dart';
 import 'package:coinspace/view/home/top_move_screen.dart';
+import 'package:coinspace/view/market/about_screen.dart';
 import 'package:coinspace/view/market/bitcoin_screen.dart';
+import 'package:coinspace/view/market/empty_screen.dart';
+import 'package:coinspace/view/market/lifechecker_screen.dart';
+import 'package:coinspace/view/market/share_sheet.dart';
 import 'package:coinspace/view/profile/scan_screen.dart';
+import 'package:coinspace/widget/about_iwealth_view.dart';
 import 'package:coinspace/widget/coin_view.dart';
+import 'package:coinspace/widget/lifechecker_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -49,7 +55,11 @@ class _HomeViewState extends State<HomeView> {
               ),
               const SizedBox(width: 20),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Get.dialog(
+                    const EmptyScreen(),
+                  );
+                },
                 child: SizedBox(
                   height: 24,
                   width: 24,
@@ -75,7 +85,7 @@ class _HomeViewState extends State<HomeView> {
                   Padding(
                     padding: const EdgeInsets.only(left: 20, right: 20),
                     child: Text(
-                      "Portfolio Value",
+                      "Portfolio Overview",
                       style: Theme.of(context).textTheme.bodyText1!.copyWith(
                             fontSize: 16,
                             fontWeight: FontWeight.w800,
@@ -88,85 +98,14 @@ class _HomeViewState extends State<HomeView> {
                     child: CardView(),
                   ),
                   const SizedBox(height: 25),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20, right: 20),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Quick Buy",
-                          style:
-                              Theme.of(context).textTheme.bodyText1!.copyWith(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w800,
-                                  ),
-                        ),
-                        Text(
-                          "View all",
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyText1!
-                              .copyWith(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w600,
-                                color: HexColor(AppTheme.secondaryColorString!),
-                              ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 15),
-                  SizedBox(
-                    height: 72,
-                    child: ListView.builder(
-                      itemCount: 5,
-                      padding: const EdgeInsets.only(left: 20, right: 20),
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (BuildContext context, int index) {
-                        return InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const BitcoinScreen()),
-                            );
-                          },
-                          child: Padding(
-                            padding: const EdgeInsets.only(right: 14),
-                            child: Container(
-                              height: 72,
-                              width: 72,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(14),
-                                color: AppTheme.isLightTheme == true
-                                    ? HexColor(AppTheme.lightGrayString!)
-                                    : HexColor(AppTheme.darkGrayString!),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(16.0),
-                                child: Image.asset(
-                                  index == 0
-                                      ? DefaultImages.h15
-                                      : index == 1
-                                          ? DefaultImages.h19
-                                          : index == 2
-                                              ? DefaultImages.h18
-                                              : index == 3
-                                                  ? DefaultImages.h25
-                                                  : DefaultImages.h26,
-                                ),
-                              ),
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                  const SizedBox(height: 25),
+
+
+
+
                   Padding(
                     padding: const EdgeInsets.only(left: 20, right: 20),
                     child: Text(
-                      "Watchlist",
+                      "Quick links",
                       style: Theme.of(context).textTheme.bodyText1!.copyWith(
                             fontSize: 16,
                             fontWeight: FontWeight.w800,
@@ -179,17 +118,18 @@ class _HomeViewState extends State<HomeView> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        for (var i = 0; i < 2; i++)
+                        for (var i = 0; i < 1; i++)
+                          //for (var i = 0; i < 2; i++)
                           Padding(
                             padding: const EdgeInsets.only(bottom: 15),
-                            child: CoinView(
+                            child: AboutiWealthView(
                               image: i == 0
-                                  ? DefaultImages.h15
-                                  : DefaultImages.h19,
-                              text1: i == 0 ? "Bitcoin" : "Ethereum",
-                              text2: i == 0 ? "BTC/USd" : "ETH/USD",
-                              text3: i == 0 ? "40,168.53" : "2744.37",
-                              text4: i == 0 ? "+2.16%" : "+1.15%",
+                                  ? DefaultImages.h14b
+                                  : DefaultImages.h19b,
+                              text1: i == 0 ? "About iWealth" : "Your SD Box",
+                              text2: i == 0 ? "Read more" : "Continue",
+                              text3: i == 0 ? ">" : ">",
+                              text4: i == 0 ? "" : "",
                             ),
                           ),
                       ],
@@ -198,7 +138,7 @@ class _HomeViewState extends State<HomeView> {
                   GestureDetector(
                     onTap: () {
                       Get.to(
-                        const TopMoveScreen(),
+                        const AboutScreen(),
                         transition: Transition.rightToLeft,
                       );
                     },
@@ -208,7 +148,8 @@ class _HomeViewState extends State<HomeView> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "Top Movers",
+                            //"Cards/Accounts",
+                            "Signals",
                             style:
                                 Theme.of(context).textTheme.bodyText1!.copyWith(
                                       fontSize: 16,
@@ -231,6 +172,11 @@ class _HomeViewState extends State<HomeView> {
                       ),
                     ),
                   ),
+
+
+
+
+
                   const SizedBox(height: 15),
                   SizedBox(
                     height: 150,
@@ -359,7 +305,170 @@ class _HomeViewState extends State<HomeView> {
                       },
                     ),
                   ),
-                  const SizedBox(height: 30),
+                  //const SizedBox(height: 30),
+
+
+
+
+
+
+
+                  const SizedBox(height: 1),
+                  Padding(
+                    padding:
+                    const EdgeInsets.only(left: 20, right: 20, top: 15),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        for (var i = 0; i < 1; i++)
+                        //for (var i = 0; i < 2; i++)
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 15),
+                            child: LifecheckerView(
+                              image: i == 0
+                                  ? DefaultImages.h14b
+                                  : DefaultImages.h19b,
+                              text1: i == 0 ? "Life Checker" : "",
+                              text2: i == 0 ? "Read more" : "Continue",
+                              text3: i == 0 ? ">" : ">",
+                              text4: i == 0 ? "" : "",
+                            ),
+                          ),
+                      ],
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(
+                        const AboutScreen(),
+                        transition: Transition.rightToLeft,
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 20, right: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: const [
+
+
+                        ],
+                      ),
+                    ),
+                  ),
+
+
+
+
+   /*
+
+
+
+
+                  const SizedBox(height: 1),
+                  Padding(
+                    padding:
+                    const EdgeInsets.only(left: 20, right: 20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        for (var i = 0; i < 1; i++)
+                        //for (var i = 0; i < 2; i++)
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 15),
+                            child: CoinView(
+                              image: i == 0
+                                  ? DefaultImages.h14b
+                                  : DefaultImages.h19b,
+                              text1: i == 0 ? "About iWealth" : "Your SD Box",
+                              text2: i == 0 ? "Read more" : "Continue",
+                              text3: i == 0 ? ">" : ">",
+                              text4: i == 0 ? "" : "",
+                            ),
+                          ),
+                      ],
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(
+                        const AboutScreen(),
+                        transition: Transition.rightToLeft,
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 20, right: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: const [
+
+
+
+
+
+                        ],
+                      ),
+                    ),
+                  ),
+
+*/
+
+
+/*
+
+                  //const SizedBox(height: 25),
+                  Padding(
+                    padding:
+                    const EdgeInsets.only(left: 20, right: 20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        for (var i = 0; i < 1; i++)
+                        //for (var i = 0; i < 2; i++)
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 15),
+                            child: CoinView(
+                              image: i == 0
+                                  ? DefaultImages.h14b
+                                  : DefaultImages.h19b,
+                              text1: i == 0 ? "About iWealth" : "Your SD Box",
+                              text2: i == 0 ? "Read more" : "Continue",
+                              text3: i == 0 ? ">" : ">",
+                              text4: i == 0 ? "" : "",
+                            ),
+                          ),
+                      ],
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(
+                        const AboutScreen(),
+                        transition: Transition.rightToLeft,
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 20, right: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: const [
+
+
+                        ],
+                      ),
+                    ),
+                  ),
+
+
+
+
+
+                  */
+
+
+
+
+
+
                 ],
               ),
             ],
