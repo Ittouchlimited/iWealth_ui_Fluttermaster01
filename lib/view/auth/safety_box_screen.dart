@@ -13,14 +13,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:coinspace/widget/image_picker_widget.dart';
 
-class NumberScreen extends StatefulWidget {
-  const NumberScreen({super.key});
+class SafetyBoxScreen extends StatefulWidget {
+  const SafetyBoxScreen({super.key});
 
   @override
-  State<NumberScreen> createState() => _NumberScreenState();
+  State<SafetyBoxScreen> createState() => _SafetyBoxScreenState();
 }
 
-class _NumberScreenState extends State<NumberScreen> {
+class _SafetyBoxScreenState extends State<SafetyBoxScreen> {
 
 
   final List<String> incomerangeItems = [
@@ -53,7 +53,7 @@ class _NumberScreenState extends State<NumberScreen> {
             const BackIcon(),
             const SizedBox(height: 30),
             Text(
-              "Complete your profile",
+              "Safety Deposit Box",
               style: Theme.of(context).textTheme.bodyText1!.copyWith(
                     fontSize: 24,
                     fontWeight: FontWeight.w800,
@@ -61,7 +61,7 @@ class _NumberScreenState extends State<NumberScreen> {
             ),
             const SizedBox(height: 10),
             Text(
-              "Enter your Address, Mobile number\nyour income range.",
+              "You can save your files here.",
               style: Theme.of(context).textTheme.bodyText1!.copyWith(
                     fontSize: 16,
                     fontWeight: FontWeight.w400,
@@ -69,7 +69,7 @@ class _NumberScreenState extends State<NumberScreen> {
                     height: 1.6,
                   ),
             ),
-
+/*
             const SizedBox(height: 10),
             const CustomTextField(
               hintText: "Your Address",
@@ -81,60 +81,7 @@ class _NumberScreenState extends State<NumberScreen> {
               //isObsecure: false,
             ),
 
-
-
-
-            const SizedBox(height: 10),
-            CustomTextField(
-              hintText: "Mobile number",
-              prefix: Padding(
-                padding: const EdgeInsets.only(left: 8, right: 8),
-                child: SizedBox(
-                  width: 80,
-                  child: Row(
-                    children: [
-                      CountryPickerDropdown(
-                        initialValue: 'NG',
-                        icon: Icon(
-                          Icons.keyboard_arrow_down,
-                          color: HexColor(AppTheme.secondaryColorString!),
-                          size: 20,
-                        ),
-                        itemBuilder: (Country country) => Container(
-                          height: 26,
-                          width: 26,
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                          ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(100),
-                            child:
-                            CountryPickerUtils.getDefaultFlagImage(country),
-                          ),
-                        ),
-                        sortComparator: (Country a, Country b) =>
-                            a.isoCode.compareTo(b.isoCode),
-                        onValuePicked: (Country country) {
-                          debugPrint(country.name);
-                        },
-                      ),
-
-
-                      const SizedBox(width: 10),
-                      Container(
-                        height: 26,
-                        width: 1.2,
-                        color: HexColor(AppTheme.secondaryColorString!),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              sufix: const SizedBox(),
-              textEditingController: TextEditingController(),
-              inputType: TextInputType.emailAddress,
-              isObsecure: false,
-            ),
+*/
 
 
 
@@ -303,7 +250,7 @@ class _NumberScreenState extends State<NumberScreen> {
                 ),
               ),
             ),*/
-            const SizedBox(height: 10),
+            const SizedBox(height: 30),
             /*Text(
               "Income range",
               style: Theme.of(context).textTheme.bodyText1!.copyWith(
@@ -314,78 +261,9 @@ class _NumberScreenState extends State<NumberScreen> {
               ),
             ),*/
 
-
-
-
-
-            const SizedBox(height: 30),
-            DropdownButtonFormField2(
-              decoration: const InputDecoration(
-                //Add isDense true and zero Padding.
-                //Add Horizontal padding using buttonPadding and Vertical padding by increasing buttonHeight instead of add Padding here so that The whole TextField Button become clickable, and also the dropdown menu open under The whole TextField Button.
-                isDense: false,
-                contentPadding: EdgeInsets.zero,
-                /*border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),*/
-                //Add more decoration as you want here
-                //Add label If you want but add hint outside the decoration to be aligned in the button perfectly.
-              ),
-              isExpanded: true,
-              hint: const Text(
-                'Your Income Range',
-                style: TextStyle(fontSize: 14),
-              ),
-              items: incomerangeItems
-                  .map((item) => DropdownMenuItem<String>(
-                value: item,
-                child: Text(
-                  item,
-                  style: const TextStyle(
-                    fontSize: 14,
-                  ),
-                ),
-              ))
-                  .toList(),
-              validator: (value) {
-                if (value == null) {
-                  return 'Your Income Range';
-                }
-                return null;
-              },
-              onChanged: (value) {
-                //Do something when changing the item if you want.
-              },
-              onSaved: (value) {
-                selectedValue = value.toString();
-              },
-              buttonStyleData: const ButtonStyleData(
-                height: 60,
-                padding: EdgeInsets.only(left: 20, right: 10),
-              ),
-              iconStyleData: const IconStyleData(
-                icon: Icon(
-                  Icons.arrow_drop_down,
-                  color: Colors.black45,
-                ),
-                iconSize: 30,
-              ),
-              dropdownStyleData: DropdownStyleData(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-              ),
-            ),
-
-
-
-
-
-
-
-            const SizedBox(height: 50),
+            //const SizedBox(height: 50),
             Text(
-              "Verification",
+              "File 01",
               style: Theme.of(context).textTheme.bodyText1!.copyWith(
                 fontSize: 16,
                 fontWeight: FontWeight.w400,
@@ -394,14 +272,31 @@ class _NumberScreenState extends State<NumberScreen> {
               ),
             ),
             const SizedBox(height: 10),
-            Container(
-              child: Column(
-                children: const [
-                  //This is the widget I am talking about
-                  ImagePickerWidget()
-                ],
-              ),
+            Column(
+              children: const [
+                //This is the widget I am talking about
+                ImagePickerWidget()
+              ],
+            ),
 
+
+
+            const SizedBox(height: 30),
+            Text(
+              "File 01",
+              style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
+                color: HexColor(AppTheme.secondaryColorString!),
+                height: 1.6,
+              ),
+            ),
+            const SizedBox(height: 10),
+            Column(
+              children: const [
+                //This is the widget I am talking about
+                ImagePickerWidget()
+              ],
             ),
 
 
@@ -410,7 +305,7 @@ class _NumberScreenState extends State<NumberScreen> {
 
             const Expanded(child: SizedBox()),
             CustomButton(
-              text: "Continue",
+              text: "Save",
               /*onTap: () {
                 /*if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();

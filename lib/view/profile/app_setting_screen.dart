@@ -60,7 +60,7 @@ class _AppSettingScreenState extends State<AppSettingScreen> {
                 physics: const ClampingScrollPhysics(),
                 children: [
                   const SizedBox(height: 50),
-                  for (var i = 0; i < 4; i++)
+                  for (var i = 0; i < 1; i++)
                     GestureDetector(
                       onTap: () {
                         if (AppTheme.isLightTheme == true) {
@@ -92,7 +92,7 @@ class _AppSettingScreenState extends State<AppSettingScreen> {
                                         )
                                       : SvgPicture.asset(
                                           i == 0
-                                              ? DefaultImages.p2
+                                              ? DefaultImages.p4
                                               : i == 1
                                                   ? DefaultImages.m26
                                                   : i == 2
@@ -104,7 +104,7 @@ class _AppSettingScreenState extends State<AppSettingScreen> {
                               const SizedBox(width: 20),
                               Text(
                                 i == 0
-                                    ? "Display"
+                                    ? "Switch theme"
                                     : i == 1
                                         ? "Language"
                                         : i == 2
@@ -119,6 +119,9 @@ class _AppSettingScreenState extends State<AppSettingScreen> {
                                     ),
                               ),
                               const Expanded(child: SizedBox()),
+
+
+                              /*
                               Icon(
                                 Icons.arrow_forward_ios,
                                 color: Theme.of(context)
@@ -127,6 +130,10 @@ class _AppSettingScreenState extends State<AppSettingScreen> {
                                     .color,
                                 size: 12,
                               ),
+
+
+
+                              */
                             ],
                           ),
                           const SizedBox(height: 20),

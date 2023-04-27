@@ -3,7 +3,9 @@
 import 'package:coinspace/config/images.dart';
 import 'package:coinspace/config/textstyle.dart';
 import 'package:coinspace/controller/home_controller.dart';
+import 'package:coinspace/view/auth/add_liability_screen.dart';
 import 'package:coinspace/view/market/buy_bottomsheet.dart';
+import 'package:coinspace/view/market/share_assets_sheet.dart';
 import 'package:coinspace/view/market/share_liabilities_sheet.dart';
 import 'package:coinspace/view/market/share_sheet.dart';
 import 'package:coinspace/view/market/transaction_view.dart';
@@ -45,13 +47,16 @@ class _LiabilityScreenState extends State<LiabilityScreen> {
                         fontWeight: FontWeight.w800,
                       ),
                 ),
+
+
+
                 Row(
                   children: [
                     GestureDetector(
                       onTap: () {
                         scaffoldKey.currentState!.showBottomSheet(
                           backgroundColor: Colors.transparent,
-                          (context) => const ShareLiabilitiesSheet(),
+                              (context) => const ShareAssetsSheet(),
                         );
                       },
                       child: SizedBox(
@@ -63,17 +68,43 @@ class _LiabilityScreenState extends State<LiabilityScreen> {
                         ),
                       ),
                     ),
-                    const SizedBox(width: 20),
-                    SizedBox(
-                      height: 24,
-                      width: 24,
-                      child: SvgPicture.asset(
-                        DefaultImages.m22,
-                        color: Theme.of(context).textTheme.bodyText1!.color,
-                      ),
-                    )
                   ],
                 ),
+
+
+
+
+
+
+                Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        scaffoldKey.currentState!.showBottomSheet(
+                          backgroundColor: Colors.transparent,
+                              (context) => const AddLiabilityScreen(),
+                        );
+                      },
+                      child: SizedBox(
+                        height: 24,
+                        width: 24,
+                        child: SvgPicture.asset(
+                          DefaultImages.m21,
+                          color: Theme.of(context).textTheme.bodyText1!.color,
+                        ),
+                      ),
+                    ),
+
+                  ],
+                ),
+
+
+
+
+
+
+
+
               ],
             ),
           ),

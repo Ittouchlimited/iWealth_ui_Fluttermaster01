@@ -45,7 +45,7 @@ class _MarketViewState extends State<MarketView> {
               ),
               Text(
 
-                "Subscribe",
+                "Reports",
                 style: Theme.of(context).textTheme.bodyText1!.copyWith(
                       fontSize: 16,
                       fontWeight: FontWeight.w800,

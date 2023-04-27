@@ -10,8 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-class CardView extends StatelessWidget {
-  const CardView({super.key});
+class ProfileCompletenessCardView extends StatelessWidget {
+  const ProfileCompletenessCardView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class CardView extends StatelessWidget {
                       Row(
                         children: [
                           Text(
-                            "Total Worth (NGN)",
+                            "Your NET Worth (NGN)",
                             style: Theme.of(context)
                                 .textTheme
                                 .bodyText1!
@@ -60,7 +60,7 @@ class CardView extends StatelessWidget {
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        "1,008,612",
+                        "0.0",
                         style: Theme.of(context).textTheme.bodyText1!.copyWith(
                               fontSize: 28,
                               fontWeight: FontWeight.w800,
@@ -76,14 +76,27 @@ class CardView extends StatelessWidget {
                 ),
               ],
             ),
+
+
+
+
+
+
+
+
+
             const SizedBox(height: 10),
             Row(
-              children: [
+              children: const [
+
+
+                /*
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                  children: const [
+                    /*
                     Text(
-                      "",
+                      "No. of Assets",
                       style: Theme.of(context).textTheme.bodyText1!.copyWith(
                             fontSize: 8,
                             fontWeight: FontWeight.w600,
@@ -92,28 +105,47 @@ class CardView extends StatelessWidget {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      "",
+                      "5",
                       style: Theme.of(context).textTheme.bodyText1!.copyWith(
                             fontSize: 12,
                             fontWeight: FontWeight.w600,
                             color: HexColor(AppTheme.greenColorString!),
                           ),
                     ),
+                    */
                   ],
+
                 ),
+
+                */
+
+
+
+
+/*
                 const SizedBox(width: 10),
                 Container(
                   height: 28,
-                  width: 90,
+                  width: 1,
                   color:
-                      HexColor(AppTheme.secondaryColorString!).withOpacity(0),
+                      HexColor(AppTheme.secondaryColorString!).withOpacity(0.5),
                 ),
                 const SizedBox(width: 10),
+*/
+
+
+
+                /*
+
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                  children: const [
+
+
+
+                    /*
                     Text(
-                      "",
+                      "No. of Liabilities",
                       style: Theme.of(context).textTheme.bodyText1!.copyWith(
                             fontSize: 8,
                             fontWeight: FontWeight.w600,
@@ -121,23 +153,20 @@ class CardView extends StatelessWidget {
                           ),
                     ),
                     const SizedBox(height: 8),
-
-
                     Text(
-                      "",
+                      "2",
                       style: Theme.of(context).textTheme.bodyText1!.copyWith(
                             fontSize: 12,
                             fontWeight: FontWeight.w600,
                             color: HexColor(AppTheme.redColorString!),
                           ),
                     ),
-
+                    */
                   ],
                 ),
+*/
 
-
-
-
+/*
                 const SizedBox(width: 10),
                 Expanded(
                   child: SmallButton(
@@ -164,6 +193,14 @@ class CardView extends StatelessWidget {
  */
                   ),
                 ),
+                */
+
+
+
+
+
+
+/*
                 const SizedBox(width: 10),
                 Expanded(
                   child: SmallButton(
@@ -187,7 +224,7 @@ class CardView extends StatelessWidget {
                     bg: HexColor(AppTheme.secondaryColorString!),
                   ),
                 ),
-
+*/
 
 
 

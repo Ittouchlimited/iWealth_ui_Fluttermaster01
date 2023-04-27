@@ -2,8 +2,12 @@
 
 import 'package:coinspace/config/images.dart';
 import 'package:coinspace/config/textstyle.dart';
+import 'package:coinspace/view/auth/beneficiary_screen.dart';
 import 'package:coinspace/view/auth/login_screen.dart';
 import 'package:coinspace/view/auth/onboarding_screen.dart';
+import 'package:coinspace/view/auth/safety_box_screen.dart';
+import 'package:coinspace/view/auth/user_profile_screen.dart';
+import 'package:coinspace/view/auth/user_screen.dart';
 import 'package:coinspace/view/home/home_view.dart';
 import 'package:coinspace/view/market/empty_screen.dart';
 import 'package:coinspace/view/profile/app_setting_screen.dart';
@@ -58,6 +62,10 @@ class _ProfileViewState extends State<ProfileView> {
               ),
               Row(
                 children: [
+
+
+
+                  /*
                   GestureDetector(
                     onTap: () {
                       Get.dialog(
@@ -73,6 +81,11 @@ class _ProfileViewState extends State<ProfileView> {
                       ),
                     ),
                   ),
+
+
+
+
+                  */
                   const SizedBox(width: 20),
                   SizedBox(
                     height: 24,
@@ -95,22 +108,15 @@ class _ProfileViewState extends State<ProfileView> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SizedBox(height: 20),
-                    Text(
-                      "Tony Stark",
+                    const SizedBox(height: 20), Text(
+                      //getGreetings(),
+                      //style: regularTextStyle.copyWith(
+                      //color: customBlackColor.withOpacity(.6),
+                      "Hello, Username 👋",
                       style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                            fontSize: 24,
-                            fontWeight: FontWeight.w800,
-                          ),
-                    ),
-                    const SizedBox(height: 5),
-                    Text(
-                      "tony@stark.com",
-                      style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                            color: HexColor(AppTheme.secondaryColorString!),
-                          ),
+                        fontSize: 12,
+                        fontWeight: FontWeight.w800,
+                      ),
                     ),
                     const SizedBox(height: 20),
                     Container(
@@ -136,39 +142,39 @@ class _ProfileViewState extends State<ProfileView> {
                             onTap: () {
                               if (i == 0) {
                                 Get.to(
-                                  const EmptyScreen(),
+                                  const UserScreen(),
                                   transition: Transition.rightToLeft,
                                 );
                               } else if (i == 1) {
                                 Get.to(
-                                  const SilverPlanScreen(),
+                                  const BeneficiaryScreen(),
                                   transition: Transition.rightToLeft,
                                 );
                               } else if (i == 2) {
                                 Get.to(
-                                  const PlatinumPlanScreen(),
+                                  const SafetyBoxScreen(),
                                   transition: Transition.rightToLeft,
                                 );
                               } else if (i == 3) {
                                 Get.to(
-                                  const AppSettingScreen(),
+                                  const SilverPlanScreen(),
                                   transition: Transition.rightToLeft,
                                 );
                               } else if (i == 4) {
                                 Get.to(
-                                  const NotificationScreen(),
+                                  const PlatinumPlanScreen(),
                                   transition: Transition.rightToLeft,
                                 );
                               } else if (i == 5) {
                                 Get.to(
-                                  const SecurityScreen(),
+                                  const AppSettingScreen(),
                                   transition: Transition.rightToLeft,
                                 );
                               }
                               else if (i == 6) {
                                 //Get.offAll(
                                 Get.to(
-                                  const EmptyScreen(),
+                                  const NotificationScreen(),
                                   transition: Transition.rightToLeft,
                                 );
                               }
@@ -202,22 +208,22 @@ class _ProfileViewState extends State<ProfileView> {
                                           i == 0
                                               ? DefaultImages.m18
                                               : i == 1
-                                                  ? DefaultImages.m19
+                                                  ? DefaultImages.m20
                                                   : i == 2
-                                                      ? DefaultImages.m9
+                                                      ? DefaultImages.m11
                                                       : i == 3
-                                                          ? DefaultImages.m17
+                                                          ? DefaultImages.m19
                                                           : i == 4
                                                               ? DefaultImages
-                                                                  .m20
+                                                                  .m19
                                               : i == 5
                                               ? DefaultImages
-                                          .m24
+                                          .m9
                                               : i == 6
                                               ? DefaultImages
-                                          .m24
+                                          .m17
                                               : DefaultImages
-                                          .m24,
+                                          .m21,
                                         ),
                                       ),
                                     ),
@@ -226,17 +232,17 @@ class _ProfileViewState extends State<ProfileView> {
                                       i == 0
                                           ? "Profile"
                                           : i == 1
-                                              ? "Silver Plan"
+                                              ? "Beneficiary"
                                               : i == 2
-                                                  ? "Platinum Plan"
+                                                  ? "Safety Deposit Box"
                                           : i == 3
-                                          ? "App Settings"
+                                          ? "Silver Plan"
                                           : i == 4
-                                      ? "Notifications"
+                                      ? "Platinum Plan"
                                           : i == 5
-                                                          ? "Security"
+                                                          ? "App Settings"
                                           : i == 6
-                                          ? "Support"
+                                          ? "Notifications"
                                             : "Logout",
                                       style: Theme.of(context)
                                           .textTheme

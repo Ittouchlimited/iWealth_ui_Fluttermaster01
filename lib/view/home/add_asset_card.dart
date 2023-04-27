@@ -10,8 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-class CardView extends StatelessWidget {
-  const CardView({super.key});
+class AddAssetCardView extends StatelessWidget {
+  const AddAssetCardView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,106 +35,78 @@ class CardView extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          Text(
-                            "Total Worth (NGN)",
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyText1!
-                                .copyWith(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w600,
-                                  color:
-                                      HexColor(AppTheme.secondaryColorString!),
-                                ),
-                          ),
-                          const SizedBox(width: 5),
-                         /* SizedBox(
-                            height: 16,
-                            width: 16,
-                            child: SvgPicture.asset(
-                              DefaultImages.eye,
-                              color: HexColor(AppTheme.secondaryColorString!),
+                          const SizedBox(width: 10),
+                          Expanded(
+                            child: SmallButton(
+                              text: "+ Asset",
+                              onTap: () {
+                                Get.to(
+                                  const AddAssetScreen(),
+                                  transition: Transition.rightToLeft,
+                                );
+                              },
+/*
+                    onTap: () {
+                      Get.bottomSheet(
+                        bottomCard(
+                          DefaultImages.h6,
+                          DefaultImages.h7,
+                          "Update Portfolio",
+                          "Add Asset",
+                          "Add Liability",
+                        ),
+                      );
+                    },
+
+ */
                             ),
-                          ) */
+                          ),
                         ],
                       ),
                       const SizedBox(height: 8),
-                      Text(
-                        "1,008,612",
-                        style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                              fontSize: 28,
-                              fontWeight: FontWeight.w800,
-                            ),
-                      ),
                     ],
-                  ),
-                ),
-                Expanded(
-                  child: Image.asset(
-                    DefaultImages.h32,
                   ),
                 ),
               ],
             ),
+
+
+
+
+
+
+
+
+
             const SizedBox(height: 10),
             Row(
               children: [
+
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "",
-                      style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                            fontSize: 8,
-                            fontWeight: FontWeight.w600,
-                            color: HexColor(AppTheme.secondaryColorString!),
-                          ),
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      "",
-                      style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w600,
-                            color: HexColor(AppTheme.greenColorString!),
-                          ),
-                    ),
+                  children: const [
+
+                    SizedBox(height: 8),
                   ],
                 ),
+
                 const SizedBox(width: 10),
                 Container(
                   height: 28,
-                  width: 90,
+                  width: 1,
                   color:
-                      HexColor(AppTheme.secondaryColorString!).withOpacity(0),
+                      HexColor(AppTheme.secondaryColorString!).withOpacity(0.5),
                 ),
                 const SizedBox(width: 10),
+
+
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "",
-                      style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                            fontSize: 8,
-                            fontWeight: FontWeight.w600,
-                            color: HexColor(AppTheme.secondaryColorString!),
-                          ),
-                    ),
-                    const SizedBox(height: 8),
-
-
-                    Text(
-                      "",
-                      style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w600,
-                            color: HexColor(AppTheme.redColorString!),
-                          ),
-                    ),
+                  children: const [
+                    SizedBox(height: 8),
 
                   ],
                 ),
-
 
 
 
@@ -164,6 +136,14 @@ class CardView extends StatelessWidget {
  */
                   ),
                 ),
+
+
+
+
+
+
+
+/*
                 const SizedBox(width: 10),
                 Expanded(
                   child: SmallButton(
@@ -187,7 +167,7 @@ class CardView extends StatelessWidget {
                     bg: HexColor(AppTheme.secondaryColorString!),
                   ),
                 ),
-
+*/
 
 
 

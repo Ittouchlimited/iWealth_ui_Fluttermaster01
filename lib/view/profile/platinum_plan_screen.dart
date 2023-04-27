@@ -4,6 +4,10 @@ import 'package:coinspace/config/images.dart';
 import 'package:coinspace/config/textstyle.dart';
 import 'package:coinspace/controller/profile_controller.dart';
 import 'package:coinspace/main.dart';
+import 'package:coinspace/view/profile/addons_platinum_screen.dart';
+import 'package:coinspace/view/profile/portfolio_valuation_platinum_screen.dart';
+import 'package:coinspace/view/profile/relationship_manager_screen.dart';
+import 'package:coinspace/view/profile/will_preparation_platinum_screen.dart';
 import 'package:coinspace/widget/back_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -54,6 +58,11 @@ class _PlatinumPlanScreenState extends State<PlatinumPlanScreen> {
                 ),
               ],
             ),
+
+
+
+
+
             Expanded(
               child: ListView(
                 padding: EdgeInsets.zero,
@@ -63,11 +72,29 @@ class _PlatinumPlanScreenState extends State<PlatinumPlanScreen> {
                   for (var i = 0; i < 4; i++)
                     GestureDetector(
                       onTap: () {
-                        if (AppTheme.isLightTheme == true) {
-                          changeColor(dark);
-                        } else {
-                          changeColor(light);
+                        if (i == 0) {
+                          Get.to(
+                            const PortfolioValuationPlatinumScreen(),
+                            transition: Transition.rightToLeft,
+                          );
+                        } else if (i == 1) {
+                          Get.to(
+                            const WillPreparationPlatinumScreen(),
+                            transition: Transition.rightToLeft,
+                          );
+                        } else if (i == 2) {
+                          Get.to(
+                            const RelationshipManagerScreen(),
+                            transition: Transition.rightToLeft,
+                          );
+                        } else if (i == 3) {
+                          Get.to(
+                            const AddonsPlatinumScreen(),
+                            transition: Transition.rightToLeft,
+                          );
                         }
+
+
                       },
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -87,16 +114,17 @@ class _PlatinumPlanScreenState extends State<PlatinumPlanScreen> {
                                   padding: const EdgeInsets.all(8.0),
                                   child: i == 1
                                       ? SvgPicture.asset(
-                                    DefaultImages.m26,
+                                    //Default icon in case other icons aren't availabl.
+                                    DefaultImages.p2,
                                     color: const Color(0xff2DD4BF),
                                   )
                                       : SvgPicture.asset(
                                     i == 0
-                                        ? DefaultImages.p2
+                                        ? DefaultImages.m11
                                         : i == 1
-                                        ? DefaultImages.m26
+                                        ? DefaultImages.p2
                                         : i == 2
-                                        ? DefaultImages.p4
+                                        ? DefaultImages.m18
                                         : DefaultImages.p7,
                                   ),
                                 ),
@@ -142,6 +170,13 @@ class _PlatinumPlanScreenState extends State<PlatinumPlanScreen> {
                 ],
               ),
             )
+
+
+
+
+
+
+
           ],
         ),
       ),

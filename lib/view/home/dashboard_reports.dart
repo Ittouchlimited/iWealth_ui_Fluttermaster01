@@ -3,40 +3,40 @@
 import 'package:coinspace/config/images.dart';
 import 'package:coinspace/config/textstyle.dart';
 import 'package:coinspace/controller/home_controller.dart';
-import 'package:coinspace/view/auth/add_asset_screen.dart';
-import 'package:coinspace/view/auth/add_liability_screen.dart';
 import 'package:coinspace/view/auth/login_screen.dart';
 import 'package:coinspace/view/auth/signup_screen.dart';
 import 'package:coinspace/view/home/all_portfolio.dart';
 import 'package:coinspace/view/home/card.dart';
+import 'package:coinspace/view/home/dashboard_portfolio.dart';
 import 'package:coinspace/view/home/dashboard_portfolio_assets.dart';
 import 'package:coinspace/view/home/top_move_screen.dart';
 import 'package:coinspace/view/market/about_screen.dart';
 import 'package:coinspace/view/market/bitcoin_screen.dart';
 import 'package:coinspace/view/market/empty_screen.dart';
 import 'package:coinspace/view/market/liability_screen.dart';
+import 'package:coinspace/view/market/platinum_plan_screen.dart';
 import 'package:coinspace/view/market/share_sheet.dart';
+import 'package:coinspace/view/market/silver_plan_screen.dart';
 import 'package:coinspace/view/profile/scan_screen.dart';
-import 'package:coinspace/widget/add_asset_view.dart';
-import 'package:coinspace/widget/add_liability_view.dart';
 import 'package:coinspace/widget/coin_view.dart';
+import 'package:coinspace/widget/platinum_plan_view.dart';
 import 'package:coinspace/widget/portfolio_assets_view.dart';
 import 'package:coinspace/widget/portfolio_liabilities_view.dart';
+import 'package:coinspace/widget/regular_plan_view.dart';
 import 'package:coinspace/widget/share_view.dart';
+import 'package:coinspace/widget/silver_plan_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-import '../market/stocklist_view_screen.dart';
-
-class DashboardPortfolio extends StatefulWidget {
-  const DashboardPortfolio({super.key});
+class DashboardReports extends StatefulWidget {
+  const DashboardReports({super.key});
 
   @override
-  State<DashboardPortfolio> createState() => _DashboardPortfolioState();
+  State<DashboardReports> createState() => _DashboardReportsState();
 }
 
-class _DashboardPortfolioState extends State<DashboardPortfolio> {
+class _DashboardReportsState extends State<DashboardReports> {
   final homeController = Get.put(HomeController());
   @override
   Widget build(BuildContext context) {
@@ -49,7 +49,6 @@ class _DashboardPortfolioState extends State<DashboardPortfolio> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-
 
 
               /*
@@ -68,10 +67,9 @@ class _DashboardPortfolioState extends State<DashboardPortfolio> {
                   ),
                 ),
               ),
-
-
-
               */
+
+
               const SizedBox(width: 20),
               InkWell(
                 onTap: () {
@@ -122,7 +120,7 @@ class _DashboardPortfolioState extends State<DashboardPortfolio> {
                   Padding(
                     padding: const EdgeInsets.only(left: 20, right: 20),
                     child: Text(
-                      "Portfolio Overview",
+                      "Generate report",
                       style: Theme.of(context).textTheme.bodyText1!.copyWith(
                             fontSize: 16,
                             fontWeight: FontWeight.w800,
@@ -217,6 +215,8 @@ class _DashboardPortfolioState extends State<DashboardPortfolio> {
                     ),
                   ),*/
 
+
+          /*
                   const SizedBox(height: 1),
                   Padding(
                     padding:
@@ -228,12 +228,12 @@ class _DashboardPortfolioState extends State<DashboardPortfolio> {
                         //for (var i = 0; i < 2; i++)
                           Padding(
                             padding: const EdgeInsets.only(bottom: 15),
-                            child: AddAssetView(
+                            child: RegularPlanView(
                               image: i == 0
-                                  ? DefaultImages.h14c
+                                  ? DefaultImages.h14g
                                   : DefaultImages.h19b,
-                              text1: i == 0 ? "Add Asset" : "",
-                              text2: i == 0 ? "Read more" : "",
+                              text1: i == 0 ? "Regular Plan" : "",
+                              text2: i == 0 ? "Read more" : "Continue",
                               text3: i == 0 ? ">" : ">",
                               text4: i == 0 ? "" : "",
                             ),
@@ -244,7 +244,7 @@ class _DashboardPortfolioState extends State<DashboardPortfolio> {
                   GestureDetector(
                     onTap: () {
                       Get.to(
-                        const AddAssetScreen(),
+                        const DashboardReports(),
                         transition: Transition.rightToLeft,
                       );
                     },
@@ -272,22 +272,19 @@ class _DashboardPortfolioState extends State<DashboardPortfolio> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-
                         for (var i = 0; i < 1; i++)
                         //for (var i = 0; i < 2; i++)
-
                           Padding(
                             padding: const EdgeInsets.only(bottom: 15),
-                            child: AddLiabilityView(
+                            child: SilverPlanView(
                               image: i == 0
-                                  ? DefaultImages.h14d
+                                  ? DefaultImages.h14h
                                   : DefaultImages.h19b,
-                              text1: i == 0 ? "AddLiability" : "",
-                              text2: i == 0 ? "Read more" : "",
+                              text1: i == 0 ? "Silver Plan" : "Your SD Box",
+                              text2: i == 0 ? "Read more" : "Continue",
                               text3: i == 0 ? ">" : ">",
                               text4: i == 0 ? "" : "",
                             ),
-
                           ),
                       ],
                     ),
@@ -295,7 +292,7 @@ class _DashboardPortfolioState extends State<DashboardPortfolio> {
                   GestureDetector(
                     onTap: () {
                       Get.to(
-                        const AddLiabilityScreen(),
+                        const SilverPlanScreen(),
                         transition: Transition.rightToLeft,
                       );
                     },
@@ -311,38 +308,10 @@ class _DashboardPortfolioState extends State<DashboardPortfolio> {
                     ),
                   ),
 
-                  //Signals Area
-                  GestureDetector(
-                    onTap: () {
-                      Get.to(
-                        const StocklistViewScreen(),
-                        transition: Transition.rightToLeft,
-                      );
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 20, right: 20),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            //"Cards/Accounts",
-                            "Your Portfolio History",
-                            style:
-                            Theme.of(context).textTheme.bodyText1!.copyWith(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w800,
-                            ),
-                          ),
-
-                        ],
-                      ),
-
-                    ),
-                  ),
-                  const SizedBox(height: 10),
 
 
-/*
+
+
 
                   //const SizedBox(height: 25),
                   Padding(
@@ -355,11 +324,11 @@ class _DashboardPortfolioState extends State<DashboardPortfolio> {
                         //for (var i = 0; i < 2; i++)
                           Padding(
                             padding: const EdgeInsets.only(bottom: 15),
-                            child: ShareView(
+                            child: PlatinumPlanView(
                               image: i == 0
-                                  ? DefaultImages.h14e
+                                  ? DefaultImages.h14i
                                   : DefaultImages.h19b,
-                              text1: i == 0 ? "Share" : "Your SD Box",
+                              text1: i == 0 ? "Platinum Plan" : "Your SD Box",
                               text2: i == 0 ? "Read more" : "Continue",
                               text3: i == 0 ? ">" : ">",
                               text4: i == 0 ? "" : "",
@@ -371,7 +340,7 @@ class _DashboardPortfolioState extends State<DashboardPortfolio> {
                   GestureDetector(
                     onTap: () {
                       Get.to(
-                        const ShareSheet(),
+                        const PlatinumPlanScreen(),
                         transition: Transition.rightToLeft,
                       );
                     },

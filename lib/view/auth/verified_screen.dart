@@ -57,7 +57,7 @@ class _VerifiedScreenState extends State<VerifiedScreen> {
             const SizedBox(height: 10),
             Center(
               child: Text(
-                //"Now you update your portfolio\nand enjoy our services at Norrenberger.",
+                //"Now you update your portfolio\n and enjoy our services at Norrenberger.",
                 "Enjoy our services at Norrenberger.",
                 style: Theme.of(context).textTheme.bodyText1!.copyWith(
                       fontSize: 16,

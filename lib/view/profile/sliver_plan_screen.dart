@@ -4,6 +4,13 @@ import 'package:coinspace/config/images.dart';
 import 'package:coinspace/config/textstyle.dart';
 import 'package:coinspace/controller/profile_controller.dart';
 import 'package:coinspace/main.dart';
+import 'package:coinspace/view/profile/payment_screen.dart';
+import 'package:coinspace/view/profile/portfolio_valuation_screen.dart';
+import 'package:coinspace/view/profile/promo_screen.dart';
+import 'package:coinspace/view/profile/qr_screen.dart';
+import 'package:coinspace/view/profile/relationship_manager_screen.dart';
+import 'package:coinspace/view/profile/reward_screen.dart';
+import 'package:coinspace/view/profile/will_preparation_screen.dart';
 import 'package:coinspace/widget/back_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -63,12 +70,38 @@ class _SilverPlanScreenState extends State<SilverPlanScreen> {
                   for (var i = 0; i < 3; i++)
                     GestureDetector(
                       onTap: () {
+                        if (i == 0) {
+                          Get.to(
+                            const PortfolioValuationScreen(),
+                            transition: Transition.rightToLeft,
+                          );
+                        } else if (i == 1) {
+                          Get.to(
+                            const WillPreparationScreen(),
+                            transition: Transition.rightToLeft,
+                          );
+                        } else if (i == 2) {
+                          Get.to(
+                            const RelationshipManagerScreen(),
+                            transition: Transition.rightToLeft,
+                          );
+                        }
+
+
+                      },
+                      /*onTap: () {
+                        Get.to(
+                          const RewardScreen(),
+                          transition: Transition.rightToLeft,
+                        );
+                      },
+                      onTap: () {
                         if (AppTheme.isLightTheme == true) {
                           changeColor(dark);
                         } else {
                           changeColor(light);
                         }
-                      },
+                      },*/
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -87,16 +120,17 @@ class _SilverPlanScreenState extends State<SilverPlanScreen> {
                                   padding: const EdgeInsets.all(8.0),
                                   child: i == 1
                                       ? SvgPicture.asset(
-                                          DefaultImages.m26,
+                                    //Default icon in case other icons aren't availabl.
+                                          DefaultImages.p2,
                                           color: const Color(0xff2DD4BF),
                                         )
                                       : SvgPicture.asset(
                                           i == 0
-                                              ? DefaultImages.p2
+                                              ? DefaultImages.m11
                                               : i == 1
-                                                  ? DefaultImages.m26
+                                                  ? DefaultImages.p2
                                                   : i == 2
-                                                      ? DefaultImages.p4
+                                                      ? DefaultImages.m18
                                                       : DefaultImages.p7,
                                         ),
                                 ),

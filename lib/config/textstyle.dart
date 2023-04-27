@@ -10,6 +10,7 @@ class AppTheme {
   static String? greenColorString = "#39CC77";
   static String? lightGrayString = "#F2F2F7";
   static String? darkGrayString = "#1C222E";
+  static String? blackColorString = "#000000";
   static bool isLightTheme = true;
 
   static ThemeData getTheme() {

@@ -49,6 +49,9 @@ class _DashboardSubscribeState extends State<DashboardSubscribe> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
+
+
+              /*
               GestureDetector(
                 onTap: () {
                   Get.dialog(
@@ -64,6 +67,9 @@ class _DashboardSubscribeState extends State<DashboardSubscribe> {
                   ),
                 ),
               ),
+              */
+
+
               const SizedBox(width: 20),
               InkWell(
                 onTap: () {
@@ -204,7 +210,7 @@ class _DashboardSubscribeState extends State<DashboardSubscribe> {
                             padding: const EdgeInsets.only(bottom: 15),
                             child: RegularPlanView(
                               image: i == 0
-                                  ? DefaultImages.h14b
+                                  ? DefaultImages.h14g
                                   : DefaultImages.h19b,
                               text1: i == 0 ? "Regular Plan" : "",
                               text2: i == 0 ? "Read more" : "Continue",
@@ -252,7 +258,7 @@ class _DashboardSubscribeState extends State<DashboardSubscribe> {
                             padding: const EdgeInsets.only(bottom: 15),
                             child: SilverPlanView(
                               image: i == 0
-                                  ? DefaultImages.h14b
+                                  ? DefaultImages.h14h
                                   : DefaultImages.h19b,
                               text1: i == 0 ? "Silver Plan" : "Your SD Box",
                               text2: i == 0 ? "Read more" : "Continue",
@@ -300,7 +306,7 @@ class _DashboardSubscribeState extends State<DashboardSubscribe> {
                             padding: const EdgeInsets.only(bottom: 15),
                             child: PlatinumPlanView(
                               image: i == 0
-                                  ? DefaultImages.h14b
+                                  ? DefaultImages.h14i
                                   : DefaultImages.h19b,
                               text1: i == 0 ? "Platinum Plan" : "Your SD Box",
                               text2: i == 0 ? "Read more" : "Continue",

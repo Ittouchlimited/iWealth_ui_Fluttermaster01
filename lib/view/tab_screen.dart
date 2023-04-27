@@ -6,6 +6,7 @@ import 'package:coinspace/controller/home_controller.dart';
 import 'package:coinspace/view/assets/assets_view.dart';
 import 'package:coinspace/view/assets/portfolio_view.dart';
 import 'package:coinspace/view/home/dashboard_portfolio.dart';
+import 'package:coinspace/view/home/dashboard_reports.dart';
 import 'package:coinspace/view/home/dashboard_subscribe.dart';
 import 'package:coinspace/view/home/home_view.dart';
 import 'package:coinspace/view/market/market_view.dart';
@@ -13,6 +14,9 @@ import 'package:coinspace/view/profile/profile_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+
+import 'package:coinspace/widget/floating_fab_view.dart';
+import 'package:flutter/material.dart';
 
 class TabScreen extends StatefulWidget {
   const TabScreen({super.key});
@@ -37,6 +41,7 @@ class _TabScreenState extends State<TabScreen> {
             () => Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                //const FloatingFab(),
                 tab(
                   homeController.tabFlag.value == 0
                       ? DefaultImages.tab1Select
@@ -65,7 +70,7 @@ class _TabScreenState extends State<TabScreen> {
                   homeController.tabFlag.value == 2
                       ? DefaultImages.tab3Select
                       : DefaultImages.tab3,
-                  "Subscribe",
+                  "Reports",
                   homeController.tabFlag.value == 2
                       ? HexColor(AppTheme.primaryColorString!)
                       : HexColor(AppTheme.secondaryColorString!),
@@ -97,7 +102,7 @@ class _TabScreenState extends State<TabScreen> {
             //? const AssetsView()
             ? const DashboardPortfolio()
                 : homeController.tabFlag.value == 2
-                    ? const DashboardSubscribe()
+                    ? const DashboardReports()
                     : const ProfileView(),
       ),
     );
