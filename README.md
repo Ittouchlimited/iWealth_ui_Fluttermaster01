@@ -1,4 +1,4 @@
-# coinspace
+# iWealth UI
 
 A new Flutter project.
 
